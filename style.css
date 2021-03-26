@@ -123,11 +123,6 @@ html{
     font-size: 40px;
     margin: 5px 0;
 }
-/* DOES NOT WORK FOR NOW -- RUBBER BAND */
-.home .home-content .rubber-hover:hover{
-    color: #48CFAD;
-    animation: scale(1.05);
-}
 .home .home-content .text-3 .typing{
     color: crimson;
     font-weight: 500;
@@ -149,33 +144,45 @@ html{
 }
 
 /* DOES NOT WORK FOR NOW -- RUBBER BAND */
+.home .home-content .text-rubber .rubber-hover{
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+    display: inline-block;
+    font-size: 35px;
+}
+.home .home-content .text-rubber .rubber-hover:hover{
+    color: #48CFAD;
+    animation: rubberBand;
+}
 @keyframes rubberBand {
-  0% {
-    transform: scale3d(1, 1, 1);
-  }
-  30% {
-    transform: scale3d(1.25, 0.75, 1);
-  }
-
-  40% {
-    transform: scale3d(0.75, 1.25, 1);
-  }
-
-  50% {
-    transform: scale3d(1.15, 0.85, 1);
-  }
-
-  65% {
-    transform: scale3d(.95, 1.05, 1);
-  }
-
-  75% {
-    transform: scale3d(1.05, .95, 1);
-  }
-
-  100% {
-    transform: scale3d(1, 1, 1);
-  }
+    from {
+        transform: scale3d(1, 1, 1);
+    }
+    
+    30% {
+        transform: scale3d(1.25, 0.75, 1);
+    }
+    
+    40% {
+        transform: scale3d(0.75, 1.25, 1);
+    }
+    
+    50% {
+        transform: scale3d(1.15, 0.85, 1);
+    }
+    
+    65% {
+        transform: scale3d(.95, 1.05, 1);
+    }
+    
+    75% {
+        transform: scale3d(1.05, .95, 1);
+    }
+    
+    to {
+        transform: scale3d(1, 1, 1);
+    }
 } 
 
 /** general section styling **/
