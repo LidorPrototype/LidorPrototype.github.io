@@ -13,6 +13,23 @@
 html{
     scroll-behavior: smooth;
 }
+::-webkit-scrollbar {
+    width: 7px;
+}
+::-webkit-scrollbar-track {
+    background: black;
+    border-radius: 2px;
+    box-shadow: 5px 5px 10px #ccc insert, -5px -5px 10px white insert;
+}
+::-webkit-scrollbar-thumb {
+    background: #e6f6e6;
+    border-radius: 2px;
+/*    border-left: 1px solid black;*/
+    border-right: 1px solid black;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #a2b7b0;
+}
 
 /** navbar styling **/
 .navbar{
@@ -161,7 +178,7 @@ section .title::before{
     position: absolute;
     bottom: 0px;
     left: 50%;
-    width: 180px;
+    width: 200px;
     height: 3px;
     background: #111;
     transform: translateX(-50%);
@@ -178,11 +195,12 @@ section .title::after{
 }
 
 /** mutual styling **/
-.about, .services, .skills, .teams, .contact, footer{
+.about, .services, online-courses, .skills, .teams, .contact, footer{
     font-family: 'Poppins', sans-serif;
 }
 .about .about-content, 
 .services .services-content,
+.online-courses .online-courses-content,
 .skills .skills-content,
 .contact, .contact-content{
     display: flex;
@@ -190,18 +208,19 @@ section .title::after{
     align-items: center;
     justify-content: space-between;
 }
-.services, .teams{
+.services, .online-courses, .teams{
     color: white;
     background: #111;
 }
 .services .title::before, 
+.online-courses .title::before, 
 .teams .title::before{
     background: white;
 }
 .services .title::after, 
+.online-courses .title::after, 
 .teams .title::after{
     background: #111;
-    content: "what i provide";
 }
 
 /** about section styling **/
@@ -275,6 +294,43 @@ section .title::after{
     font-size: 25px;
     font-weight: 500;
     margin: 10px 0 7px 0;
+}
+.services .title::after{
+    content: "what i provide";
+}
+
+/** online-courses section styling **/
+.online-courses .online-courses-content .card{
+    width: calc(25% - 20px);
+    background: #222;
+    text-align: center;
+    border-radius: 6px;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.online-courses .online-courses-content .card:hover{
+    background: crimson;
+}
+.online-courses .online-courses-content .card .box{
+    transition: all 0.3s ease;
+}
+.online-courses .online-courses-content .card:hover .box{
+    transform: scale(1.05);
+}
+.online-courses .online-courses-content .card img{
+    height: 35px;
+    width: 35px;
+}
+.online-courses .online-courses-content .card .text{
+    width: 50%;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 5px 0 5px 15px;
+    display: inline-block;
+}
+.online-courses .title::after{
+    content: "that i completed";
 }
 
 /** skills section styling **/
@@ -417,13 +473,10 @@ section .title::after{
 .contact .title::after{
     content: "get in touch";
 }
-.contact .contact-content .right{
-    height: 350px;;
-    padding-left: 100px;
-    
-}
 .contact .contact-content .column{
+    height: 350px;
     width: calc(50% - 30px);
+/*    border: 3px solid black;*/
 }
 .contact .contact-content .text{
     font-size: 20px;
@@ -437,10 +490,10 @@ section .title::after{
     margin: 10px 0;
 }
 .contact .contact-content .social-media-ref{
-    margin-top: 30px;
+    margin-top: 20px;
 }
 .contact .contact-content .social-media-ref .row-social{
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .contact .contact-content .row{
     display: flex;
@@ -532,7 +585,7 @@ section .title::after{
 /** footer section styling **/
 footer{
     background: #111;
-    padding: 20px 23px;
+    padding: 20px;
     color: white;
 }
 footer span a{
@@ -541,6 +594,78 @@ footer span a{
 }
 footer span a:hover{
     text-decoration: underline;
+}
+
+/*   Angled div -> add an id of                  */
+/*  'slanted-div-up-about' for about             */
+#slanted-div-about {
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    background: white;
+    overflow: visible;
+    z-index: 1;
+}
+#slanted-div-about:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    bottom: 0;
+    transform-origin: left bottom;
+    transform: skewY(3deg);
+}
+/*  'slanted-div-up-services' for services       */
+#slanted-div-services {
+  position: relative;
+  padding-top: 35px;
+  padding-bottom: 75px;
+  background: #111;
+  overflow: visible;
+  z-index: 1;
+}
+#slanted-div-services:before, #slanted-div-services:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    transform-origin: left top;
+    transform: skewY(-3deg);
+}
+#slanted-div-services:after {
+  bottom: 0;
+  transform-origin: left bottom;
+  transform: skewY(3deg);
+}
+/*  'slanted-div-up-teams' for teams             */
+#slanted-div-teams {
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 75px;
+  background: #111;
+  overflow: visible;
+  z-index: 1;
+}
+#slanted-div-teams:before, #slanted-div-teams:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    transform-origin: left top;
+    transform: skewY(-3deg);
+}
+#slanted-div-teams:after {
+  bottom: 0;
+  transform-origin: left bottom;
+  transform: skewY(3deg);
 }
 
 /** responsive media query start **/
@@ -671,43 +796,62 @@ footer span a:hover{
 /*    color: #48CFAD;*/
     animation: rubberBand;
 }
-@-webkit-keyframes rubberBand {
+@keyframes rubberBand {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+/*
+
+@keyframes rubberBand {
   from {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
-
   30% {
     -webkit-transform: scale3d(1.25, 0.75, 1);
     transform: scale3d(1.25, 0.75, 1);
   }
-
   40% {
     -webkit-transform: scale3d(0.75, 1.25, 1);
     transform: scale3d(0.75, 1.25, 1);
   }
-
   50% {
     -webkit-transform: scale3d(1.15, 0.85, 1);
     transform: scale3d(1.15, 0.85, 1);
   }
-
   65% {
     -webkit-transform: scale3d(0.95, 1.05, 1);
     transform: scale3d(0.95, 1.05, 1);
   }
-
   75% {
     -webkit-transform: scale3d(1.05, 0.95, 1);
     transform: scale3d(1.05, 0.95, 1);
   }
-
   to {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
 }
-@keyframes rubberBand {
+@-webkit-keyframes rubberBand {
   from {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
@@ -757,6 +901,7 @@ footer span a:hover{
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
 }
+*/
 
 
 
