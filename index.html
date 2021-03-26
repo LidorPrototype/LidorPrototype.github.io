@@ -302,6 +302,20 @@
             <center><span>Created By <a href="#">L-ES</a> | <img src="images/copyright.png" height="13px"> 2021 All rights reserves.</span></center>
         </footer>
     </body>
+    <script>
+        const bouncing = () => {
+    const spans = document.querySelectorAll('h1 span');
+    spans.forEach((span, index) => {
+      setTimeout(() => span.classList.add('animated', 'rubberBand'), `${(index) * 4 + '00'}`);
+      setTimeout(() => span.classList.remove('animated', 'rubberBand'), 3500);
+    });
+  };
+  bouncing();
+  window.onload = () =>
+    setInterval(function () {
+      bouncing();
+    }, 4000);
+    </script>
 </html>
 
 
