@@ -308,38 +308,6 @@ section .title::after{
     background: none;
 }
 
-/** services section styling **/
-.services .services-content .card{
-    width: calc(33% - 20px);
-    background: #222;
-    text-align: center;
-    border-radius: 6px;
-    padding: 20px 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-.services .services-content .card:hover{
-    background: crimson;
-}
-.services .services-content .card .box{
-    transition: all 0.3s ease;
-}
-.services .services-content .card:hover .box{
-    transform: scale(1.05);
-}
-.services .services-content .card img{
-    height: 50px;
-    width: 50px;
-}
-.services .services-content .card .text{
-    font-size: 25px;
-    font-weight: 500;
-    margin: 10px 0 7px 0;
-}
-.services .title::after{
-    content: "what i provide";
-}
-
 /** online-courses section styling **/
 .online-courses .online-courses-content .card{
     width: calc(25% - 20px);
@@ -372,6 +340,89 @@ section .title::after{
 }
 .online-courses .title::after{
     content: "that i completed";
+}
+/** collapsible area for the courses list **/
+.collapsible-container{
+    width: 95%;
+}
+.cc-content {
+    width: calc(90% - 20px);
+    margin-left: 23px;
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    background-color: #141c3a;
+    box-shadow: 1px 1px 15px 1px rgb(255, 255, 255, 0.11);
+    opacity: 0;
+    border-radius: 12px;
+    box-sizing: inherit;
+    transition: max-height 1.0s ease, opacity 0.75s ease;
+}
+.cc-first{
+    margin-top: 36px;
+}
+#cc-p{
+    color: white;   
+}
+/** collapsible expanded area - list design **/
+.numberlist{
+    margin-bottom: 25px;
+}
+.numberlist li {
+    margin: 15px;
+    font: 200 13px/1.5 Helvetica, Verdana, sans-serif;
+}
+.numberlist li a {
+    text-decoration: none;
+    color: #d9d9d9;
+    transition: all 0.3s ease;
+    display: block;
+    width: 93%;
+    margin-left: 35px;
+    
+}
+.numberlist li a:hover {
+    font-size: 20px;
+    text-decoration: underline;
+    background: #212e5f;
+    width: 100%;
+    margin-left: 10px;
+    box-shadow: 2px 2px 35px 2px rgb(255, 255, 255, 0.05);
+}
+.numberlist ol{
+    counter-reset: li;
+    list-style: none;
+    font: 15px 'trebuchet MS', 'lucida sans';
+}
+.numberlist a{ /** the item **/
+    position: relative;
+    display: block;
+    padding: .2em .0em .2em 2em;
+    margin: .5em 0;
+    background: #1a254c;
+    text-decoration: none;
+    border-radius: 6px;
+    box-shadow: 1px 1px 15px 0 rgb(255, 255, 255, 0.05);
+}
+.numberlist a:before{ /** the circle **/
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;	
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: #8FBC8B;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: .3em solid #141c3a;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    color: #000;
+}
+.numberlist a:hover:before{
+    background: #80ffd4;
 }
 
 /** skills section styling **/
@@ -658,16 +709,16 @@ footer span a:hover{
     transform-origin: left bottom;
     transform: skewY(3deg);
 }
-/*  'slanted-div-up-services' for services       */
-#slanted-div-services {
+/*  'slanted-div-up-occ' for online-courses       */
+#slanted-div-occ {
   position: relative;
-  padding-top: 35px;
-  padding-bottom: 75px;
+  padding-top: 45px;
+  padding-bottom: 85px;
   background: #111;
   overflow: visible;
   z-index: 1;
 }
-#slanted-div-services:before, #slanted-div-services:after {
+#slanted-div-occ:before, #slanted-div-occ:after {
     content: '';
     width: 100%;
     height: 100%;
@@ -678,7 +729,7 @@ footer span a:hover{
     transform-origin: left top;
     transform: skewY(-3deg);
 }
-#slanted-div-services:after {
+#slanted-div-occ:after {
   bottom: 0;
   transform-origin: left bottom;
   transform: skewY(3deg);
@@ -812,7 +863,7 @@ footer span a:hover{
 }
 @media (max-width: 500px){
     .home .home-content .text-2{
-        font-size: 50px;
+        font-size: 40px;
     }
     .home .home-content .text-3{
         font-size: 20px;
@@ -832,9 +883,73 @@ footer span a:hover{
 
 
 
-
-
-
+/*
+    Old Version stuff
+*/
+/*  CSS
+/** services section styling **/
+.services .services-content .card{
+    width: calc(33% - 20px);
+    background: #222;
+    text-align: center;
+    border-radius: 6px;
+    padding: 20px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.services .services-content .card:hover{
+    background: crimson;
+}
+.services .services-content .card .box{
+    transition: all 0.3s ease;
+}
+.services .services-content .card:hover .box{
+    transform: scale(1.05);
+}
+.services .services-content .card img{
+    height: 50px;
+    width: 50px;
+}
+.services .services-content .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+.services .title::after{
+    content: "what i provide";
+}
+*/
+/*
+<!--      services section start         -->
+    <section class="services" id="slanted-div-services">
+        <div class="max-width">
+            <h2 class="title">My services</h2>
+            <div class="services-content">
+                <div class="card">
+                    <div class="box">
+                        <img src="images/menu_btn_white.png">
+                        <div class="text">Web Designer</div>
+                        <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/menu_btn_white_close.png">
+                        <div class="text">Advertising</div>
+                        <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/menu_btn_white.png">
+                        <div class="text">Apps Designer</div>
+                        <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+*/
 
 
 
