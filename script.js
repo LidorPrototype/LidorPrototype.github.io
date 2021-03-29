@@ -5,7 +5,7 @@ $(document).ready(function(){
         setTimeout(function(){ x.className = "show"; }, 1000);
         setTimeout(function(){ x.className = x.className.replace("show", "bye"); }, 5000);
     }
-    myFunction();
+//    myFunction();
     
     $(window).scroll(function(){
         if(this.scrollY > 20){
@@ -123,8 +123,18 @@ $(document).ready(function(){
       });
     });
 
-});
+    // Tooltip
+    var tooltip = document.querySelectorAll('.tooltip-span');
+    document.addEventListener('mousemove', fn, false);
+    function fn(e) {
+        for (var i=tooltip.length; i--;) {
+            tooltip[i].style.left = e.pageX + 'px';
+            tooltip[i].style.top = e.pageY + 'px';
+        }
+    }
 
+    
+});
 
 
 
