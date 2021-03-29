@@ -1,4 +1,12 @@
 $(document).ready(function(){
+    function myFunction() {
+        var x = document.getElementById("snackbar");
+//        x.className = "show";
+        setTimeout(function(){ x.className = "show"; }, 1000);
+        setTimeout(function(){ x.className = x.className.replace("show", "bye"); }, 5000);
+    }
+    myFunction();
+    
     $(window).scroll(function(){
         if(this.scrollY > 20){
             $('.navbar').addClass("sticky");
@@ -27,40 +35,18 @@ $(document).ready(function(){
     })
     
     //  typing animation script
+    var strs = ['Developer', 'Software Engineering Student', 'Programmer', 'Freelancer', 'Beginner Designer'];
     var typed = new Typed('.typing', {
-        strings: ['Developer', 'Programmer', 'Freelancer', 'Software Engineering Student'],
+        strings: strs,
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
     });
     var typed = new Typed('.typing-2', {
-        strings: ['Developer', 'Programmer', 'Freelancer', 'Software Engineering Student'],
+        strings: strs,
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
-    });
-    
-    // owl script
-    $('.carousel').owlCarousel({
-        margin: 20,
-        loop: true,
-        autoplayTimeOut: 2000,
-        autoplayHoverPause: true,
-        responsive: {
-            0:{
-                items: 1,
-                nav: false
-            },
-            600:{
-                items: 2,
-                nav: false
-            },
-            1000:{
-                items: 3,
-                nav: false
-            }
-        }
-        
     });
     
     // rubberBand Effect
@@ -71,12 +57,7 @@ $(document).ready(function(){
       $(this).addClass("rubberBand");        
     })
     
-    
-    
-    
-    
-    
-//    var coll = document.getElementsByClassName("collapsible");
+    // Collapsible area
     var cals = document.getElementsByClassName("card-collapsible");
     var cons = document.getElementsByClassName("cc-content");
     for (var i = 0; i < cals.length; i++) {
@@ -123,44 +104,26 @@ $(document).ready(function(){
         } 
       });
     }
+    
+    // Projects gridview area
+    var $grid = $('.projects-grid').isotope({
+      itemSelector: '.projects-grid-item',
+      columnWidth: '.projects-grid-sizer',
+      percentPosition: true
+    });
+    $('.projects-filter-nav').on('click', '.projects-filter', function(){
+      var filterValue = $(this).attr('data-filter');
+      $grid.isotope({ filter: filterValue });
+    });
+    $('.projects-filter-nav').each(function( i, buttonGroup) {
+      var $buttonGroup = $(buttonGroup);
+      $buttonGroup.on('click', '.projects-filter', function() {
+      $buttonGroup.find('.is-checked').removeClass('is-checked');
+      $( this ).addClass('is-checked');
+      });
+    });
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 });
-
-
-function copyEmailToClipboard() {
-    var copyText = "ivanlidor98@gmail.com";
-    document.execCommand("copy");
-    alert("Copied to clipboard!");
-}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -88,6 +88,65 @@ html{
     display: none;
 }
 
+/* Right Bottom Snackbar - icons notice */
+#snackbar{
+    min-width: 200px;
+    min-height: 24px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 12px;
+    background-color: #333;
+    color: #fff;
+    text-align: start;
+    position: fixed;
+    z-index: 1000;
+    right: 15px;
+    bottom: 15px;
+    font-size: 14px;
+    font-family: sans-serif;
+    border-radius: 6px;
+    visibility: hidden;
+}
+#snackbar.show{
+    visibility: visible;
+    animation: fadein-rb 1s;
+    animation-fill-mode: forwards;
+}
+#snackbar.bye{
+    visibility: visible;
+    animation: fadeout-rb 0.5s;
+    animation-fill-mode: forwards;
+}
+@keyframes fadein-rb{
+    0%{
+        right: -250px;
+        bottom: -250px;
+        opacity: 0;
+    }
+    50%{
+        right: 60px;
+        bottom: 60px;
+        opacity: 1;
+    }
+    100%{
+        right: 15px;
+        bottom: 15px;
+        opacity: 1;
+    }
+}
+@keyframes fadeout-rb{
+    from{
+        right: 15px;
+        bottom: 15px;
+        opacity: 1;
+    }
+    to{
+        right: -250px;
+        bottom: -250px;
+        opacity: 0;
+    }
+}
+
 /** scroll up btn styling **/
 .scroll-up-btn{
     position: fixed;
@@ -236,7 +295,7 @@ section .title::after{
 }
 
 /** mutual styling **/
-.about, .services, online-courses, .skills, .teams, .contact, footer{
+.about, .services, online-courses, .skills, .projects, .contact, footer{
     font-family: 'Poppins', sans-serif;
 }
 .about .about-content, 
@@ -249,18 +308,18 @@ section .title::after{
     align-items: center;
     justify-content: space-between;
 }
-.services, .online-courses, .teams{
+.services, .online-courses, .projects{
     color: white;
     background: #111;
 }
 .services .title::before, 
 .online-courses .title::before, 
-.teams .title::before{
+.projects .title::before{
     background: white;
 }
 .services .title::after, 
 .online-courses .title::after, 
-.teams .title::after{
+.projects .title::after{
     background: #111;
 }
 
@@ -308,123 +367,107 @@ section .title::after{
     background: none;
 }
 
-/** online-courses section styling **/
-.online-courses .online-courses-content .card{
-    width: calc(25% - 20px);
+/** projects section styling **/
+.projects .title{
+    margin-bottom: 40px;
+}
+.projects .title::after{
     background: #222;
+    content: "what i've done";
+}
+.projects-filter-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    border-radius: 6px;
-    padding: 15px 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-.online-courses .online-courses-content .card:hover{
-    background: crimson;
-}
-.online-courses .online-courses-content .card .box{
-    transition: all 0.3s ease;
-}
-.online-courses .online-courses-content .card:hover .box{
-    transform: scale(1.05);
-}
-.online-courses .online-courses-content .card img{
-    height: 35px;
-    width: 35px;
-    vertical-align: middle;
-}
-.online-courses .online-courses-content .card .text{
-    width: 50%;
-    font-size: 30px;
-    font-weight: 600;
-    vertical-align: middle;
-    margin: 5px 0 5px 15px;
-    display: inline-block;
-}
-.online-courses .title::after{
-    content: "that i completed";
-}
-/** collapsible area for the courses list **/
-.collapsible-container{
-    width: 95%;
-}
-.cc-content {
-    width: calc(90% - 20px);
-    margin-left: 23px;
-    padding: 0 18px;
-    max-height: 0;
-    overflow: hidden;
-    background-color: #141c3a;
-    box-shadow: 1px 1px 15px 1px rgb(255, 255, 255, 0.11);
-    opacity: 0;
-    border-radius: 12px;
-    box-sizing: inherit;
-    transition: max-height 1.0s ease, opacity 0.75s ease;
-}
-.cc-first{
-    margin-top: 36px;
-}
-#cc-p{
-    color: white;   
-}
-/** collapsible expanded area - list design **/
-.numberlist{
-    margin-bottom: 25px;
-}
-.numberlist li {
-    margin: 15px;
-    font: 200 13px/1.5 Helvetica, Verdana, sans-serif;
-}
-.numberlist li a {
-    text-decoration: none;
-    color: #d9d9d9;
-    transition: all 0.3s ease;
-    display: block;
-    width: 93%;
-    margin-left: 35px;
-    
-}
-.numberlist li a:hover {
-    font-size: 20px;
-    text-decoration: underline;
-    background: #212e5f;
-    width: 100%;
-    margin-left: 10px;
-    box-shadow: 2px 2px 35px 2px rgb(255, 255, 255, 0.05);
-}
-.numberlist ol{
-    counter-reset: li;
     list-style: none;
-    font: 15px 'trebuchet MS', 'lucida sans';
 }
-.numberlist a{ /** the item **/
-    position: relative;
-    display: block;
-    padding: .2em .0em .2em 2em;
-    margin: .5em 0;
-    background: #1a254c;
-    text-decoration: none;
-    border-radius: 6px;
-    box-shadow: 1px 1px 15px 0 rgb(255, 255, 255, 0.05);
-}
-.numberlist a:before{ /** the circle **/
-    content: counter(li);
-    counter-increment: li;
-    position: absolute;	
-    left: -1.3em;
-    top: 50%;
-    margin-top: -1.3em;
-    background: #8FBC8B;
-    height: 2em;
-    width: 2em;
-    line-height: 2em;
-    border: .3em solid #141c3a;
+.projects-filter-nav li {
+    width: 125px;
+    height: 50px;
+    transition: background-position 0.9s linear;
     text-align: center;
-    font-weight: bold;
-    border-radius: 2em;
-    color: #000;
+    font-size: 22px;
+    color: #777;
+    text-decoration: none;
+    transition: all 0.45s;
 }
-.numberlist a:hover:before{
-    background: #80ffd4;
+.projects-filter-nav li:hover {
+    background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEi%0D%0AIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhs%0D%0AaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB3aWR0%0D%0AaD0iMzkwcHgiIGhlaWdodD0iNTBweCIgdmlld0JveD0iMCAwIDM5MCA1MCIgZW5hYmxlLWJhY2tn%0D%0Acm91bmQ9Im5ldyAwIDAgMzkwIDUwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHBhdGggZmlsbD0i%0D%0Abm9uZSIgc3Ryb2tlPSIjZDk0ZjVjIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLW1pdGVybGlt%0D%0AaXQ9IjEwIiBkPSJNMCw0Ny41ODVjMCwwLDk3LjUsMCwxMzAsMAoJYzEzLjc1LDAsMjguNzQtMzgu%0D%0ANzc4LDQ2LjE2OC0xOS40MTZDMTkyLjY2OSw0Ni41LDI0My42MDMsNDcuNTg1LDI2MCw0Ny41ODVj%0D%0AMzEuODIxLDAsMTMwLDAsMTMwLDAiLz4KPC9zdmc+Cg==");
+    animation: line 1s;
+    color: #d94f5c;
+}
+@keyframes line {
+    0% {
+            background-position: 400px;
+    }
+}
+.projects .projects-grid-view{
+/*  border: 1px solid red;*/
+    width: 85%;
+    margin: 30px auto;
+    margin-top: 0px;
+}
+.projects h3, li, p{
+    font-family: "Poppins", sans-serif;
+    color: #757575;
+    font-weight: 300;
+}
+.projects p{
+    font-size: 14px;
+    line-height: 26px;
+}
+.projects ul{
+    list-style-type: none;
+}
+.projects .is-checked{
+    color: #d94f5c;
+}
+.projects .projects-nav ul{
+    display:flex;
+    flex-direction: row;
+    padding-left: 15px;
+}
+.projects .projects-nav li{
+    padding-right: 15px;
+    cursor: pointer;
+}
+.projects .projects-grid {
+    max-width: 100%;
+}
+.projects .projects-grid:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.projects .projects-grid-sizer,
+.projects .projects-grid-item{
+    width: 25%;
+    float: left;
+}
+.projects .projects-item-wrapper{
+    border-radius: 32px;
+    background: white;
+    margin: 15px;
+    transition: all 0.8s ease;
+    transform: all 0.8s ease;
+}
+.projects .projects-item-wrapper:hover{
+    transform: scale(1.05);
+    box-shadow: 2px 2px 10px 0px rgba(153, 153, 153);
+}
+.projects .projects-image-container{
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+    width: 100%;
+    height: 200px;
+    max-height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.projects .projects-content{
+    padding: 15px;
 }
 
 /** skills section styling **/
@@ -501,66 +544,121 @@ section .title::after{
     width: 70%;
 }
 
-/** teams section styling **/
-.teams .title::after{
-    content: "who with me";
-}
-.teams .carousel .card{
+/** online-courses section styling **/
+.online-courses .online-courses-content .card{
+    width: calc(25% - 20px);
     background: #222;
-    border-radius: 6px;
-    padding: 25px 35px;
     text-align: center;
+    border-radius: 6px;
+    padding: 15px 20px;
+    cursor: pointer;
     transition: all 0.3s ease;
 }
-.teams .carousel .card:hover{
+.online-courses .online-courses-content .card:hover{
+    box-shadow: 2px 2px 10px 1px rgb(255, 255, 255, 0.2);
     background: crimson;
 }
-.teams .carousel .card .box{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.online-courses .online-courses-content .card .box{
     transition: all 0.3s ease;
 }
-.teams .carousel .card:hover .box{
+.online-courses .online-courses-content .card:hover .box{
     transform: scale(1.05);
 }
-.teams .carousel .card .text{
-    font-size: 25px;
-    font-weight: 500;
-    margin: 10px 0 7px 0;
+.online-courses .online-courses-content .card img{
+    height: 35px;
+    vertical-align: middle;
 }
-.teams .carousel .card img{
-    height: 150px;
-    width: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid crimson;
+.online-courses .online-courses-content .card .text{
+    width: 50%;
+    font-size: 30px;
+    font-weight: 600;
+    vertical-align: middle;
+    margin: 5px 0 5px 15px;
+    display: inline-block;
+}
+.online-courses .title::after{
+    content: "that i completed";
+}
+.collapsible-container{
+    width: 95%;
+}
+.cc-content {
+    width: calc(90% - 20px);
+    margin-left: 23px;
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    background-color: #141c3a;
+    box-shadow: 1px 1px 15px 1px rgb(255, 255, 255, 0.11);
+    opacity: 0;
+    border-radius: 12px;
+    box-sizing: inherit;
+    transition: max-height 1.0s ease, opacity 0.75s ease;
+}
+.cc-first{
+    margin-top: 36px;
+}
+#cc-p{
+    color: white;   
+}
+.numberlist{
+    margin-bottom: 25px;
+}
+.numberlist li {
+    margin: 15px;
+    font: 200 13px/1.5 Helvetica, Verdana, sans-serif;
+}
+.numberlist li a {
+    text-decoration: none;
+    color: #d9d9d9;
     transition: all 0.3s ease;
+    display: block;
+    width: 93%;
+    margin-left: 35px;
+    
 }
-.teams .carousel .card:hover img{
-    border-color: white;
+.numberlist li a:hover {
+    font-size: 20px;
+    text-decoration: underline;
+    background: #212e5f;
+    width: 100%;
+    margin-left: 10px;
+    box-shadow: 2px 2px 35px 2px rgb(255, 255, 255, 0.05);
 }
-.owl-dots{
+.numberlist ol{
+    counter-reset: li;
+    list-style: none;
+    font: 15px 'trebuchet MS', 'lucida sans';
+}
+.numberlist a{ /** the item **/
+    position: relative;
+    display: block;
+    padding: .2em .0em .2em 2em;
+    margin: .5em 0;
+    background: #1a254c;
+    text-decoration: none;
+    border-radius: 6px;
+    box-shadow: 1px 1px 15px 0 rgb(255, 255, 255, 0.05);
+}
+.numberlist a:before{ /** the circle **/
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;	
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: #8FBC8B;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: .3em solid #141c3a;
     text-align: center;
-    margin-top: 20px;
+    font-weight: bold;
+    border-radius: 2em;
+    color: #000;
 }
-.owl-dot{
-    height: 13px;
-    width: 13px;
-    margin: 0 5px;
-    outline: none!important;
-    border-radius: 50%;
-    border: 2px solid crimson!important;
-    transition: all 0.3s ease;
-}
-.owl-dot.active{
-    width: 35px;
-    border-radius: 14px;
-}
-.owl-dot.active,
-.owl-dot:hover{
-    background: crimson!important;
+.numberlist a:hover:before{
+    background: #80ffd4;
 }
 
 /** contact section styling **/
@@ -694,7 +792,7 @@ footer span a:hover{
 /*  'slanted-div-up-about' for about             */
 #slanted-div-about {
     position: relative;
-    padding-top: 50px;
+    padding-top: 105px;
     padding-bottom: 100px;
     background: white;
     overflow: visible;
@@ -711,14 +809,40 @@ footer span a:hover{
     transform-origin: left bottom;
     transform: skewY(3deg);
 }
+/*  'slanted-div-up-projects' for projects             */
+#slanted-div-projects {
+    position: relative;
+    padding-top: 100px;
+    padding-bottom: 75px;
+    background: #222;
+    overflow: visible;
+    z-index: 1;
+}
+#slanted-div-projects:before, #slanted-div-projects:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    transform-origin: left top;
+    transform: skewY(-3deg);
+}
+#slanted-div-projects:after {
+    bottom: 0;
+    transform-origin: left bottom;
+    transform: skewY(3deg);
+}
 /*  'slanted-div-up-occ' for online-courses       */
 #slanted-div-occ {
-  position: relative;
-  padding-top: 45px;
-  padding-bottom: 85px;
-  background: #111;
-  overflow: visible;
-  z-index: 1;
+    position: relative;
+    padding-top: 105px;
+    padding-bottom: 115px;
+    margin-bottom: 20px;
+    background: #111;
+    overflow: visible;
+    z-index: 1;
 }
 #slanted-div-occ:before, #slanted-div-occ:after {
     content: '';
@@ -732,34 +856,9 @@ footer span a:hover{
     transform: skewY(-3deg);
 }
 #slanted-div-occ:after {
-  bottom: 0;
-  transform-origin: left bottom;
-  transform: skewY(3deg);
-}
-/*  'slanted-div-up-teams' for teams             */
-#slanted-div-teams {
-  position: relative;
-  padding-top: 50px;
-  padding-bottom: 75px;
-  background: #111;
-  overflow: visible;
-  z-index: 1;
-}
-#slanted-div-teams:before, #slanted-div-teams:after {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: inherit;
-    z-index: -1;
-    top: 0;
-    transform-origin: left top;
-    transform: skewY(-3deg);
-}
-#slanted-div-teams:after {
-  bottom: 0;
-  transform-origin: left bottom;
-  transform: skewY(3deg);
+    bottom: 0;
+    transform-origin: left bottom;
+    transform: skewY(3deg);
 }
 
 /** responsive media query start **/
@@ -871,14 +970,16 @@ footer span a:hover{
         font-size: 20px;
     }
 }
-
-
-
-
-
-
-
-
+@media all and (min-width: 769px) and (max-width: 980px) {
+    .projects .projects-grid-item{
+        width: 50%;
+    }
+}
+@media (max-width: 768px) {
+    .projects .projects-grid-item{
+        width: 100%;
+    }
+}
 
 
 
@@ -889,7 +990,7 @@ footer span a:hover{
     Old Version stuff
 */
 /*  CSS
-/** services section styling **/
+ services section styling
 .services .services-content .card{
     width: calc(33% - 20px);
     background: #222;
