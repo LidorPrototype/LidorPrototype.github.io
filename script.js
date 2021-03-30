@@ -1,11 +1,14 @@
 $(document).ready(function(){
+    var checker = 0;
     function myFunction() {
-        var x = document.getElementById("snackbar");
-//        x.className = "show";
-        setTimeout(function(){ x.className = "show"; }, 1000);
-        setTimeout(function(){ x.className = x.className.replace("show", "bye"); }, 5000);
+        var x1 = document.getElementById("snackbar");
+        var x2 = document.getElementById("snackbar2");
+        setTimeout(function(){ x1.className = "show"; }, 1000);
+        setTimeout(function(){ x2.className = "show"; }, 3000);
+        setTimeout(function(){ x1.className = x1.className.replace("show", "bye"); }, 7000);
+        setTimeout(function(){ x2.className = x1.className.replace("show", "bye"); }, 7500);
     }
-//    myFunction();
+    myFunction();
     
     $(window).scroll(function(){
         if(this.scrollY > 20){
@@ -115,14 +118,14 @@ $(document).ready(function(){
       var filterValue = $(this).attr('data-filter');
       $grid.isotope({ filter: filterValue });
     });
-    $('.projects-filter-nav').each(function( i, buttonGroup) {
+    $('.projects-filter-nav').each(function(i, buttonGroup) {
       var $buttonGroup = $(buttonGroup);
       $buttonGroup.on('click', '.projects-filter', function() {
       $buttonGroup.find('.is-checked').removeClass('is-checked');
-      $( this ).addClass('is-checked');
+      $(this).addClass('is-checked');
       });
     });
-
+    $('#projects-collapse').trigger("click");
     // Tooltip
     var tooltip = document.querySelectorAll('.tooltip-span');
     document.addEventListener('mousemove', fn, false);

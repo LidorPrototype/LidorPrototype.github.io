@@ -90,8 +90,8 @@ html{
 
 /* Right Bottom Snackbar - icons notice */
 #snackbar{
-    min-width: 200px;
-    min-height: 24px;
+    width: 225px;
+    height: 48px;
     padding-top: 8px;
     padding-bottom: 8px;
     padding-left: 12px;
@@ -107,6 +107,24 @@ html{
     border-radius: 6px;
     visibility: hidden;
 }
+#snackbar2{
+    width: 225px;
+    height: 48px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 12px;
+    background-color: #333;
+    color: #fff;
+    text-align: start;
+    position: fixed;
+    z-index: 1000;
+    right: 15px;
+    bottom: 75px;
+    font-size: 14px;
+    font-family: sans-serif;
+    border-radius: 6px;
+    visibility: hidden;
+}
 #snackbar.show{
     visibility: visible;
     animation: fadein-rb 1s;
@@ -115,6 +133,16 @@ html{
 #snackbar.bye{
     visibility: visible;
     animation: fadeout-rb 0.5s;
+    animation-fill-mode: forwards;
+}
+#snackbar2.show{
+    visibility: visible;
+    animation: fadein-rb2 1s;
+    animation-fill-mode: forwards;
+}
+#snackbar2.bye{
+    visibility: visible;
+    animation: fadeout-rb2 0.5s;
     animation-fill-mode: forwards;
 }
 @keyframes fadein-rb{
@@ -143,6 +171,30 @@ html{
     to{
         right: -250px;
         bottom: -250px;
+        opacity: 0;
+    }
+}
+@keyframes fadein-rb2{
+    0%{
+        right: -250px;
+        opacity: 0;
+    }
+    50%{
+        right: 60px;
+        opacity: 1;
+    }
+    100%{
+        right: 15px;
+        opacity: 1;
+    }
+}
+@keyframes fadeout-rb2{
+    from{
+        right: 15px;
+        opacity: 1;
+    }
+    to{
+        right: -250px;
         opacity: 0;
     }
 }
@@ -387,7 +439,7 @@ section .title::after{
     height: 50px;
     transition: background-position 0.9s linear;
     text-align: center;
-    font-size: 22px;
+    font-size: 16px;
     color: #777;
     text-decoration: none;
     transition: all 0.45s;
@@ -407,6 +459,10 @@ section .title::after{
     width: 85%;
     margin: 30px auto;
     margin-top: 0px;
+}
+.projects h3{
+    text-underline-position: below;
+    text-decoration: underline;
 }
 .projects h3, li, p{
     font-family: "Poppins", sans-serif;
@@ -460,14 +516,17 @@ section .title::after{
     border-top-left-radius: 32px;
     border-top-right-radius: 32px;
     width: 100%;
-    height: 200px;
-    max-height: 200px;
+    height: 150px;
+    max-height: 150px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 .projects .projects-content{
+    margin-top: -15px;
+    font-size: 12px;
     padding: 15px;
+    height: 125px;
 }
 
 /** skills section styling **/
@@ -519,6 +578,7 @@ section .title::after{
     width: 100%;
     background: lightgray;
     position: relative;
+    border-radius: 12px;
 }
 .skills .skills-content .right .line::before{
     content: "";
@@ -530,18 +590,23 @@ section .title::after{
 }
 .skills-content .right .data-science::before{
     width: 80%;
+    border-radius: 12px;
 }
 .skills-content .right .mobile::before{
     width: 92%;
+    border-radius: 12px;
 }
 .skills-content .right .front-end::before{
     width: 72%;
+    border-radius: 12px;
 }
 .skills-content .right .back-end::before{
     width: 62%;
+    border-radius: 12px;
 }
 .skills-content .right .desktop::before{
     width: 80%;
+    border-radius: 12px;
 }
 .skills-content .tooltip-box:hover .tooltip-span {
     display: inline-block;
@@ -1001,73 +1066,25 @@ footer span a:hover{
 
 
 
-/*
-    Old Version stuff
-*/
-/*  CSS
- services section styling
-.services .services-content .card{
-    width: calc(33% - 20px);
-    background: #222;
-    text-align: center;
-    border-radius: 6px;
-    padding: 20px 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-.services .services-content .card:hover{
-    background: crimson;
-}
-.services .services-content .card .box{
-    transition: all 0.3s ease;
-}
-.services .services-content .card:hover .box{
-    transform: scale(1.05);
-}
-.services .services-content .card img{
-    height: 50px;
-    width: 50px;
-}
-.services .services-content .card .text{
-    font-size: 25px;
-    font-weight: 500;
-    margin: 10px 0 7px 0;
-}
-.services .title::after{
-    content: "what i provide";
-}
-*/
-/*
-<!--      services section start         -->
-    <section class="services" id="slanted-div-services">
-        <div class="max-width">
-            <h2 class="title">My services</h2>
-            <div class="services-content">
-                <div class="card">
-                    <div class="box">
-                        <img src="images/menu_btn_white.png">
-                        <div class="text">Web Designer</div>
-                        <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="box">
-                        <img src="images/menu_btn_white_close.png">
-                        <div class="text">Advertising</div>
-                        <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="box">
-                        <img src="images/menu_btn_white.png">
-                        <div class="text">Apps Designer</div>
-                        <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
