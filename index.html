@@ -5,13 +5,13 @@
         <meta name="viewport" content="witdh=device-width, initial-scale=1.0">
         <title>Lidor's Online Portfolio</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
         <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="script.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
         <script src="https://npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
         <script src="cursor_whisps.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
 
@@ -41,6 +41,7 @@
     <!--      home section start         -->
         <section class="home" id="home">
             <div class="max-width">
+                <div class="home-whisps-container" id="home-whisps-container"></div>
                 <div class="home-content">
                     <div class="text-1">
                         <div class="rubber-band">
@@ -127,7 +128,7 @@
                       <li class="projects-filter" data-filter=".java">Java</li>
                       <li class="projects-filter" data-filter=".python">Python</li>
                       <li class="projects-filter" data-filter=".c-cpp">C & CPP</li>
-                      <li class="projects-filter" data-filter=".javascript">JavaScript</li>
+                      <li class="projects-filter" data-filter=".web">Web</li>
                       <li class="projects-filter" data-filter=".os">OS</li>
                       <li class="projects-filter" data-filter=".games">Games</li>
                     </ul>
@@ -189,7 +190,7 @@
                         </div>
                       </div>
                     </div><!-- .grid-item --><!-- Chatbot & Virtual Asistant -->
-                    <div class="projects-grid-item games java python javascript">
+                    <div class="projects-grid-item games java python web">
                       <div class="projects-item-wrapper">
                         <img class="projects-image-container"  src="https://v5q9w3t5.rocketcdn.me/wp-content/uploads/2018/08/blog-webdesigntrends-2019.jpg">
                         <div class="projects-content">
@@ -225,7 +226,7 @@
                         </div>
                       </div>
                     </div><!-- .grid-item --><!-- Tower Defense -->
-                    <div class="projects-grid-item games java python c-cpp javascript">
+                    <div class="projects-grid-item games java python c-cpp web">
                       <div class="projects-item-wrapper">
                         <img class="projects-image-container"  src="https://v5q9w3t5.rocketcdn.me/wp-content/uploads/2018/08/blog-webdesigntrends-2019.jpg">
                         <div class="projects-content">
@@ -244,7 +245,7 @@
                         </div>
                       </div>
                     </div><!-- .grid-item --><!-- PasswordKit -->
-                    <div class="projects-grid-item c-cpp javascript">
+                    <div class="projects-grid-item c-cpp web">
                       <div class="projects-item-wrapper">
                         <img class="projects-image-container" src="https://miro.medium.com/max/1200/0*v4yyhL1nttFvv4J4.png">
                         <div class="projects-content">
@@ -280,7 +281,7 @@
                         </div>
                       </div>
                     </div><!-- .grid-item --><!-- PasswordKit -->
-                    <div class="projects-grid-item javascript os">
+                    <div class="projects-grid-item web os">
                       <div class="projects-item-wrapper">
                         <img class="projects-image-container" src="https://www.mockupworld.co/wp-content/uploads/dynamic/2019/10/create-mockups-in-browser-690x455-c-default.jpg">
                         <div class="projects-content">
@@ -349,16 +350,16 @@
             <div class="max-width">
                 <h2 class="title">Online courses</h2>
                 <div class="online-courses-content">
-                    <div class="card card-collapsible" id="0">
-                        <div class="box">
-                            <img src="images/udemy_logo.png">
-                            <div class="text">Udemy</div>
-                        </div>
-                    </div>
                     <div class="card card-collapsible" id="1">
                         <div class="box">
                             <img src="images/udacity_logo.png">
                             <div class="text">Udacity</div>
+                        </div>
+                    </div>
+                    <div class="card card-collapsible" id="0">
+                        <div class="box">
+                            <img src="images/udemy_logo.png">
+                            <div class="text">Udemy</div>
                         </div>
                     </div>
                     <div class="card card-collapsible" id="2">

@@ -1,12 +1,16 @@
 let conf = {
   NUM_PARTICLES: 8, // length of tail
-  NUM_STRANDS: 2, // Number of lines going
+  NUM_STRANDS: 10, // Number of lines going
   FRAME_RATE: 60
 }
 let pos = {x: Math.random() * window.innerWidth + 1, y:Math.random() * window.innerHeight + 1}
 function setup() {
-  createCanvas(window.innerWidth - 10, window.innerHeight - 200);
+  var canvas = createCanvas(window.innerWidth - 20, window.innerHeight - 10);
+  canvas.parent('home-whisps-container');
   frameRate(conf.FRAME_RATE)
+}
+function windowResized() {
+  resizeCanvas(window.innerWidth - 20, window.innerHeight - 10);
 }
 class Strand {
   constructor () {
@@ -78,7 +82,7 @@ class Particle {
     this.c = Math.floor(n * 120 + 120)
     this.follow = null;
     this.a = null
-    this.width = 8  // width of tail in movement
+    this.width = 1  // width of tail in movement
     this.r = r || Math.random() * 0.04
   }
   update () {
@@ -99,7 +103,7 @@ class Particle {
       this.a = Math.atan2(this.vy, this.vx)
       let len = Math.min(this.vy * this.vy + this.vx * this.vx, 7500) / 3500
       len = sin(len * HALF_PI)
-      this.w = this.width * len + 5
+      this.w = this.width // actuall width  original was this plus: '* len + 5'
     }
     this.vx = this.vx * 0.89
     this.vy = this.vy * 0.89
@@ -123,6 +127,6 @@ draw = () => {
       y: (Math.random() * 0.5 + 0.25) * window.innerHeight
     }
   }
-//  background(0,0,0);
+//  background(255,255,255);
   strands.forEach(s => s.draw())
 }
