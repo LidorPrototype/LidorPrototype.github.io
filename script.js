@@ -5,8 +5,8 @@ $(document).ready(function(){
         var x2 = document.getElementById("snackbar2");
         setTimeout(function(){ x1.className = "show"; }, 1000);
         setTimeout(function(){ x2.className = "show"; }, 3000);
-        setTimeout(function(){ x1.className = x1.className.replace("show", "bye"); }, 7000);
-        setTimeout(function(){ x2.className = x1.className.replace("show", "bye"); }, 7500);
+        setTimeout(function(){ x1.className = x1.className.replace("show", "bye"); }, 10000);
+        setTimeout(function(){ x2.className = x1.className.replace("show", "bye"); }, 10500);
     }
     myFunction();
     
