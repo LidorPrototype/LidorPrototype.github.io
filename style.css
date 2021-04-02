@@ -1,17 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;1,400&family=Ubuntu:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700;900&family=Poppins:wght@100;300;400;500;700;900&family=Roboto:wght@300;400;500;700;900&family=Ubuntu:wght@300;400;500;700&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
 }
+html{
+    scroll-behavior: smooth;
+}
 .max-width{
-    max-width: 1470px;
+    max-width: 100%;
     padding: 0 80px;
     margin: auto;
 }
-html{
-    scroll-behavior: smooth;
+.max-width1{
+    max-width: 100%;
+    width: 100%; 
+    margin: 0px;
 }
 ::-webkit-scrollbar {
     width: 7px;
@@ -230,7 +235,7 @@ html{
 /** home section styling **/
 .home{
     display: flex;
-    background: url("images/banner_me.jpg") no-repeat center;
+    background: url("images/Me/banner_me.jpg") no-repeat center;
     height: 100vh;
     min-height: 500px;
     color: white;
@@ -238,6 +243,9 @@ html{
 }
 .home .max-width{
     margin: auto 0 auto 40px;
+}
+.home .home-content #hire-me:hover > #home{
+    background-image: url("images/profile-2-liel.jpg");
 }
 .home .home-whisps-container{
     width: 100%;
@@ -415,7 +423,17 @@ section .title::after{
 .about .about-content .right p{
     text-align: justify;
 }
-.about .about-content .right a{
+.about .about-content .right #smaller-text{
+    padding: 0;
+    margin: 0;
+    opacity: 0.85;
+    font-size: 14px;
+}
+.about .about-content .right #k-shoa{
+    text-underline-position: below;
+    text-decoration: underline;
+}
+.about .about-content .right #cv-btn{
     display: inline-block;
     background: crimson;
     color: white;
@@ -427,7 +445,7 @@ section .title::after{
     border: 2px solid crimson;
     transition: all 0.3s ease;
 }
-.about .about-content .right a:hover{
+.about .about-content .right #cv-btn:hover{
     color: crimson;
     background: none;
 }
@@ -528,18 +546,70 @@ section .title::after{
 .projects .projects-image-container{
     border-top-left-radius: 32px;
     border-top-right-radius: 32px;
+    background: #696969;
     width: 100%;
     height: 150px;
     max-height: 150px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    border-bottom: 3px solid #B8B8B8;
 }
 .projects .projects-content{
     margin-top: -15px;
     font-size: 12px;
     padding: 15px;
     height: 125px;
+}
+
+#modal-1 {
+    display: flex;
+/*    align-items: center;*/
+    padding-top: 175px;
+    justify-content: center;
+    position: absolute;
+    top: -50px;
+    left: 0; 
+    width: 100%;
+    height: 110%;
+    overflow: hidden;
+    background: rgba(0,0,0,0.25);  
+    opacity: 0;
+    visibility: hidden;
+}
+#modal-dialog {
+    width: 80vmin;    /* Actual Box Size */
+    height: 70vmin;  /* Width && Height */
+    position: absolute;
+    overflow: hidden;
+    border-radius: 32px;
+}
+#modal-polygon {
+    fill: url(#polygon-gradient);
+    position: absolute;
+/*    box-shadow: 5px 5px 10px 5px white;*/
+}
+#modal-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+/*  padding: 14px;  */
+  visibility: hidden;
+  opacity: 0;  
+  color: rgba(255,255,255,0.87);
+}
+#modal-content a, #modal-content p, #modal-content h2 {
+    padding-left: 24px;
+    padding-right: 24px;
+    font-family: 'Playfair Display', sans-serif;
+    text-decoration: underline;
+}
+#modal-content p{
+    height: 200px;
+    color: black;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
 }
 
 /** skills section styling **/
@@ -756,27 +826,40 @@ section .title::after{
 }
 
 /** contact section styling **/
+.center {
+    display: block;
+    text-align: center;
+    margin-left: 80px;
+    margin-right: 80px;
+    width: calc(100% - (80px * 2));
+}
 .contact .title::after{
     content: "get in touch";
 }
+.contact-content {
+     text-align: left;
+}
 .contact .contact-content .column{
-    height: 350px;
-    width: calc(50% - 30px);
+    height: 510px;
+    width: calc(50% - 90px);
 /*    border: 3px solid black;*/
 }
 .contact .contact-content .text{
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 10px;
+   
+}
+.contact .contact-content .down-side .text{
+    margin-top: 15px;
+    margin-bottom: 0px;
+    
 }
 .contact .contact-content .left p{
     text-align: justify;
 }
 .contact .contact-content .left .icons{
     margin: 10px 0;
-}
-.contact .contact-content .social-media-ref{
-    margin-top: 20px;
 }
 .contact .contact-content .social-media-ref .row-social{
     margin-top: 10px;
@@ -795,15 +878,15 @@ section .title::after{
 }
 .contact .contact-content .row-social{
     display: flex;
-    height: 65px;
+    padding: 6px;
     align-items: center;
 }
 .contact .contact-content .row-social .info{
     margin-left: 25px;
 }
 .contact .contact-content .row-social img{
-    height: 32px;
-    width: 32px;
+    height: 30px;
+    width: 30px;
 }
 .contact .contact-content .info .head{
     font-weight: 500;
@@ -811,61 +894,287 @@ section .title::after{
 .contact .contact-content .info .sub-title{
     color: #333;
 }
-
-/* contact Form related - not working as of yet */
-.contact .right2 form .fields{
-    display: flex;
+#contact-middle-stamp{
+    max-height: 300px;
+    height: 285px;
 }
-.contact .right2 form .field,
-.contact .right2 form .fields .field{
-    height: 45px;
-    width: 100%;
-    margin-bottom: 15px;
+/* Pre Flip Screen */
+.contact .contact-content .right .form-card-container {
+    width: 400px;
+    height: 500px;
+    margin-top: -20px;
+    padding-left: 15%;
+    perspective: 400px;
 }
-.contact .right2 form .textarea{
-    height: 80px;
-    width: 100%;
+.contact .contact-content .right .shadow {
+  position: absolute;
+  width: calc(400px - 2px);
+  height: calc(100% - 2px);
+  background-color: #777;
+  box-shadow: inset 0 0 10px 8px rgba(0,0,0,0.3);
 }
-.contact .right2 form .name{
-    margin-right: 10px;
+.contact .contact-content .right .shadow.shadow--flipping::before,
+.contact .contact-content .right .shadow.shadow--flipping::after {
+  content: '';
+  width: 100%;
+  height: 225px;
+  animation: shadow 650ms 150ms ease-in-out;
 }
-.contact .right2 form .email{
-    margin-left: 10px;
-}
-.contact .right2 form .field input,
-.contact .right2 form .textarea textarea{
+.contact .contact-content .right .form-card {
+    display: relative;
+    width: 400px;
     height: 100%;
-    width: 100%;
-    border: 1px solid lightgray;
-    border-radius: 6px;
-    outline: none;
-    padding: 0 15px;
-    font-size: 17px;
-    font-family: 'Poppins', sans-serif;
+    transform-style: preserve-3d;
+    transition: transform 1000ms;
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-.contact .right2 form .textarea textarea{
-    padding-top: 10px;
-    resize: none;
+.contact .contact-content .right .form-card.form-card--flipped {
+  transform: rotateX(-180deg);
 }
-.contact .right2 form .button{
-    height: 47px;
-    width: 170px;;
+.contact .contact-content .right .form-card__front {
+  position: absolute;
+  width: 400px;
+  height: 100%;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: white;
+  backface-visibility: hidden;
 }
-.contact .right2 form .button button{
-    height: 100%;
-    width: 100%;
-    border: 2px solid crimson;
-    border-radius: 6px;
-    background: crimson;
-    color: white;
-    font-size: 20px;
-    font-weight: 500;
+.contact .contact-content .right .form-card__front .form__swap-link{
+    color: black;
     cursor: pointer;
-    transition: all 0.3s ease;
+    float: none;
+    display: inline-block;
+    text-align: center;
+    margin-top: 50%;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 16px;
+    border: 2.5px solid black;
+    border-radius: 6px;
 }
-.contact .right2 form .button button:hover{
-    color: crimson;
-    background: none;
+.contact .contact-content .right form {
+  padding: 20px 0;
+}
+#flip-hover{
+    width: 70%;
+    height: 22%;
+}
+#flip-hover:hover{
+    width: 70%;
+    height: 22%;
+    background-image: url('images/make_it_easy.jpg');
+    background-size: 100% 100%;
+}
+#flip-hover > #contact-fron-text{
+    width: 50%;
+    transition: all 1.25s ease;
+}
+#flip-hover:hover > #contact-fron-text{
+    width: 55%;
+    position: absolute;
+    display: flex;
+    font-weight: 700;
+    color: #000099;
+    transform: translateY(-100px);
+}
+@keyframes shadow {
+  0% {
+    background-color: rgba(176,192,204,0);
+    filter: blur(0);
+  }
+  5% {
+    background-color: rgba(176,192,204,0);
+    filter: blur(0);
+  }
+  40% {
+    background-color: rgba(176,192,204,0.4);
+    filter: blur(40px);
+  }
+  50% {
+    background-color: rgba(176,192,204,0.5);
+    filter: blur(50px);
+  }
+  65% {
+    background-color: rgba(176,192,204,0.3);
+    filter: blur(40px);
+  }
+  95% {
+    background-color: rgba(176,192,204,0);
+    filter: blur(0);
+  }
+  100% {
+    background-color: rgba(176,192,204,0);
+    filter: blur(0);
+  }
+}
+/* Post Flip Screen */
+.contact .contact-content .right .form-card__back {
+    transform: rotateX(180deg);
+    position: absolute;
+    width: 400px;
+    height: 100%;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: white;
+    backface-visibility: hidden;
+}
+.contact .contact-content .right .form-row span {
+  position: relative;
+  display: flex;
+  margin-bottom: 15px;
+}
+.contact .contact-content .right #submit {
+  background: #72A08B;
+  color: #fff;
+  font-size: 1em;
+  width: 100%;
+  padding: 10px 40px;
+  border: none;
+  outline: 0;  
+  transition: all .3s ease-in-out;
+}
+.contact .contact-content .right #submit:hover {
+  background: #0BA393;
+}
+.contact .contact-content .right .slider {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  color: #1d1d1d;
+  background: #9EE69F;
+  border: none;
+  outline: 0;
+  text-indent: 60px;
+  transition: all .3s ease-in-out;
+}
+#name, #email, #phone{
+    padding-left: 20px;
+}
+.contact .contact-content .right #msg {
+  width: 100%;
+  height: 125px;
+  padding-top: 26px;
+  resize: none;
+}
+.contact .contact-content .right #msg + label {
+  top: 20px;
+}
+.contact .contact-content .right .slider + label {
+  display: inline-block;
+  position: absolute;
+  margin-top: -23px;
+  top: 50%;
+  left: 0;
+  min-width: 80px;
+  min-height: 36px;
+  padding: 7px 10px;
+  color: #0BA393;
+  transition: all .3s ease-in-out;
+  background: rgba(219,106,160, 0);
+}
+.contact .contact-content .right .slider + label:after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  right: -18px;
+  margin-top: -9px;
+  border: 10px solid transparent; /*  For te label shape  */
+  border-left: 10px solid rgba(11,163,147, 0);
+  transition: all .3s ease-in-out;
+}
+.contact .contact-content .right .slider:focus,
+.contact .contact-content .right .slider:active {
+  color: #1d1d1d;
+  text-indent: 0;
+  background: #9EE69F;
+}
+.contact .contact-content .right .slider:focus + label,
+.contact .contact-content .right .slider:active + label {
+  color: #fff;
+  background: #0BA393;
+  transform: translateX(-80px) translateY(4px);
+}
+.contact .contact-content .right #msg:focus + label,
+.contact .contact-content .right #msg:active + label {
+  color: #fff;
+  background: #0BA393;
+  transform: translateX(-93px) translateY(3px);
+}
+.contact .contact-content .right .slider:focus + label:after,
+.contact .contact-content .right .slider:active + label:after {
+  border-left: 9px solid #0BA393;
+}
+#checkbox-info{
+    text-align: left;
+    font-size: 13px;
+    opacity: 0.75;
+}
+#checkbox-label{
+    opacity: 0.85;
+    font-size: 14px;
+}
+#span-checkbox{
+    display: block;
+    margin-left: 5px;
+    padding-left: 1px;
+    padding-right: 1px;
+}
+/* X button */
+.contact .contact-content .right .outer {
+  margin-top: 2px;
+  position: absolute;
+  left: calc(100% - 30px);
+  width: 30px;
+  cursor: pointer;
+  z-index: 2;
+}
+.contact .contact-content .right .inner {
+  width: inherit;
+  text-align: center;
+}
+.contact .contact-content .right .inner label { 
+  font-size: .8em; 
+  line-height: 3em;
+  color: red;
+  transition: all .3s ease-in;
+  opacity: 0;
+  cursor: pointer;
+}
+.contact .contact-content .right .inner:before, .inner:after {
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: inherit;
+  background: #FFC107;  /*  X color  */
+  left: 0;
+  transition: all .3s ease-in;
+}
+.contact .contact-content .right .inner:before {
+  top: 47%; 
+  transform: rotate(45deg);  
+}
+.contact .contact-content .right .inner:after {  
+  bottom: 50%;
+  transform: rotate(-45deg);  
+}
+.contact .contact-content .right .outer:hover label {
+  opacity: 1;
+}
+.contact .contact-content .right .outer:hover .inner:before,
+.contact .contact-content .right .outer:hover .inner:after {
+  transform: rotate(0);
+}
+.contact .contact-content .right .outer:hover .inner:before {
+  top: 0;
+}
+.contact .contact-content .right .outer:hover .inner:after {
+  bottom: 0;
+}
+.contact .contact-content .right .outer-container-position{
+  margin-top: 20px;
+  position: relative;
 }
 
 /** footer section styling **/
@@ -932,8 +1241,7 @@ footer span a:hover{
 #slanted-div-occ {
     position: relative;
     padding-top: 105px;
-    padding-bottom: 115px;
-    margin-bottom: 20px;
+    padding-bottom: 130px;
     background: #111;
     overflow: visible;
     z-index: 1;

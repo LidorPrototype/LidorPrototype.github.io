@@ -123,8 +123,8 @@ draw = () => {
   if (a % 14 === 0) {
     // pick a new random location
     pos = {
-      x: (Math.random() * 0.5 + 0.25) * window.innerWidth,
-      y: (Math.random() * 0.5 + 0.25) * window.innerHeight
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight
     }
   }
 //  background(255,255,255);
