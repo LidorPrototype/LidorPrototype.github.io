@@ -95,7 +95,7 @@
                             <span class="typing"></span>
                         </div>
                     </div>
-                    <a href="#contact">Hire me</a>
+                    <a href="#contact" id="hire-me">Hire me</a>
                 </div>
             </div>
         </section>
@@ -105,7 +105,7 @@
                 <h2 class="title">About me</h2>
                 <div class="about-content">
                     <div class="column left">
-                        <img src="images/profile-1-me.jpg">
+                        <img src="images/banner_me.jpg">
                     </div>
                     <div class="column right">
                         <div class="text">I'm Lidor and I'm a <span class="typing-2"></span></div>
@@ -430,7 +430,7 @@
                 <h2 class="title">Contact me</h2>
                 <div class="contact-content">
                     <div class="column left">
-                        <div class="text">Interested in working together?<br/> We should queue up a chat. I’ll buy the coffee.</div>
+                        <div class="text">Interested in working together?<br/> We should queue up a chat. I’ll buy the <span id="coffee-hover">coffee</span>.</div>
                         <div class="icons">
                             <div class="row">
                                 <img src="images/user.png">
@@ -501,6 +501,20 @@
                         </form>
                     </div>
                 </div>
+                <form
+                  action="https://formspree.io/f/mnqlqqpy"
+                  method="POST">
+                    <label>
+                        Your email:
+                        <input type="email" name="_replyto">
+                    </label>
+                    <label>
+                        Your message:
+                        <textarea name="message"></textarea>
+                    </label>
+                    <!-- your other form fields go here -->
+                    <button type="submit">Send</button>
+                </form>
             </div>
         </section>       
     <!--      footer section start         -->

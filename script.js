@@ -10,6 +10,15 @@ $(document).ready(function(){
     }
     myFunction();
     
+     $("#coffee-hover").hover(function(){
+//         $(this).parent().parent().parent().parent().parent().css("background","url('images/coffee.gif') no-repeat center");
+         $(this).parent().parent().parent().parent().parent().css("background","url('images/Coffee/coffee3.jpg') no-repeat center");
+         $(this).parent().parent().parent().parent().parent().css("background-size","100% 100%");
+     });
+     $("#coffee-hover").mouseleave(function(){
+         $(this).parent().parent().parent().parent().parent().css("background","white");
+     });
+    
     $(window).scroll(function(){
         if(this.scrollY > 20){
             $('.navbar').addClass("sticky");
