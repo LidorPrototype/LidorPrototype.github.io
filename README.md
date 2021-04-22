@@ -10,4 +10,4 @@ You can also find ways to contact me, or if you dont want to trouble your self, 
 enjoy!
 
 
-### LidorPrototype.github.io
+### [link to the website](LidorPrototype.github.io)
