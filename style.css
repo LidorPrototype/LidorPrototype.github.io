@@ -957,11 +957,11 @@ section .title::after{
   padding: 20px 0;
 }
 #flip-hover{
-    width: 70%;
+    width: 65%;
     height: 22%;
 }
 #flip-hover:hover{
-    width: 70%;
+    width: 65%;
     height: 22%;
     background-image: url('images/make_it_easy.jpg');
     background-size: 100% 100%;
@@ -971,7 +971,7 @@ section .title::after{
     transition: all 1.25s ease;
 }
 #flip-hover:hover > #contact-fron-text{
-    width: 55%;
+    width: 50%;
     position: absolute;
     display: flex;
     font-weight: 700;
