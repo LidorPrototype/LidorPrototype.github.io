@@ -1,4 +1,3 @@
-# LidorPrototype.github.io
 
 ## This is my online portfolio
 
@@ -9,3 +8,6 @@ This website is made by HTML, CSS and Javascript (plain js, jquery and with boot
 You can also find ways to contact me, or if you dont want to trouble your self, you can submit a form and I will come back to you :)
 
 enjoy!
+
+
+### LidorPrototype.github.io
