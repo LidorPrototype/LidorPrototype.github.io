@@ -5,7 +5,7 @@ let conf = {
 }
 let pos = {x: Math.random() * window.innerWidth + 1, y:Math.random() * window.innerHeight + 1}
 function setup() {
-  var canvas = createCanvas(window.innerWidth - 20, window.innerHeight - 10);
+  var canvas = createCanvas(window.innerWidth - 10, window.innerHeight - 10);
   canvas.parent('home-whisps-container');
   frameRate(conf.FRAME_RATE)
 }
