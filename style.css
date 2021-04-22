@@ -235,11 +235,14 @@ html{
 /** home section styling **/
 .home{
     display: flex;
-    background: url("images/Me/banner_me.jpg") no-repeat center;
+    background: url("images/bg/full-bg.png") no-repeat center;
     height: 100vh;
     min-height: 500px;
     color: white;
     font-family: 'Ubuntu', sans-serif;
+}
+.home::before{
+    background-image: linear-gradient( to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5) );
 }
 .home .max-width{
     margin: auto 0 auto 40px;
