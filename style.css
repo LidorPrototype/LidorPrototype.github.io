@@ -241,9 +241,6 @@ html{
     color: white;
     font-family: 'Ubuntu', sans-serif;
 }
-.home::before{
-    background-image: linear-gradient( to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5) );
-}
 .home .max-width{
     margin: auto 0 auto 40px;
 }
