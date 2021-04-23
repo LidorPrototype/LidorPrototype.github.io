@@ -235,7 +235,7 @@ html{
 /** home section styling **/
 .home{
     display: flex;
-    background: url("images/bg/full-bg-2.png") no-repeat center;
+    background: url("images/bg/full-bg-2-compressed.png") no-repeat center;
     height: 100vh;
     min-height: 500px;
     color: white;
@@ -404,10 +404,10 @@ section .title::after{
     width: 45%;
 }
 .about .about-content .left img{
-    height: 400px;
+    max-height: 400px;
     width: 400px;
     object-fit: cover;
-    border-radius: 6px;
+    border-radius: 8px;
 }
 .about .about-content .right{
     width: 55%;
