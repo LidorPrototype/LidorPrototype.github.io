@@ -109,6 +109,11 @@ $(document).ready(function(){
         } 
       });
     }
+    // Collapsible area github link
+    var cals_github = document.getElementsByClassName("card-collapsible-github");
+    cals_github[0].addEventListener("click", function(){
+        window.open("https://github.com/LidorPrototype/Online-Courses/blob/master/CoursesList.md", "_blank");
+    });
 
     // Projects gridview area
     var $grid = $('.projects-grid').isotope({
