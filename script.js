@@ -236,6 +236,9 @@ function displayProjects(project){
         case '16':
             createModalProject16(modalContent);
             break;
+        case '17':
+            createModalProject17(modalContent);
+            break;
     }
     document.querySelector('#projects-nav').click();
     modal.open();
@@ -345,11 +348,6 @@ function createModalProject1(modalContainer){
     var pText1 = document.createTextNode("This one page website is an online portfolio of Lidor E.S (Me), it's implemented using HTML, CSS and JavaScript (with and without JQuery).");
     var pText2 = document.createTextNode("You can find my skills and projects, you can also read about me in order to get to know me better, read and look at all the online courses I completed.");
     var pText3 = document.createTextNode("And at the bottom there are many ways for you to get in touch me with.");
-    p.appendChild(pText1);
-    p.appendChild(document.createElement("br"));
-    p.appendChild(pText2);
-    p.appendChild(document.createElement("br"));
-    p.appendChild(pText3);
     // Link - a tag
     var a = document.createElement('a');
     var link = document.createTextNode("Link to this website GitHub repository!");
@@ -357,11 +355,17 @@ function createModalProject1(modalContainer){
     a.target = "_blank";
     a.href = "https://github.com/LidorPrototype/LidorPrototype.github.io";
     
+    p.appendChild(pText1);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(pText2);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(pText3);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(a);
+    
     modalContainer.appendChild(img);
     modalContainer.appendChild(h2);
     modalContainer.appendChild(p);
-//    modalContainer.appendChild(document.createElement("br"));
-    modalContainer.appendChild(a);
 }        //  L-ES Portfolio -This Website
 function createModalProject2(modalContainer){
     // Image - img tag
@@ -379,11 +383,6 @@ function createModalProject2(modalContainer){
     var pText1 = document.createTextNode("This is an implantation to the famous Chess game, it's you vs the computer.");
     var pText2 = document.createTextNode("This implantation is a graphical chess engine that also uses pruning in order to increase speed and perforamnces");
     var pText3 = document.createTextNode("Chess is a recreational and competitive board game played between two players, in this project it will be the user versus the computer.");
-    p.appendChild(pText1);
-    p.appendChild(document.createElement("br"));
-    p.appendChild(pText2);
-    p.appendChild(document.createElement("br"));
-    p.appendChild(pText3);
     // Link - a tag
     var a = document.createElement('a');
     var link = document.createTextNode("Link to this project GitHub repository!");
@@ -391,11 +390,17 @@ function createModalProject2(modalContainer){
     a.target = "_blank";
     a.href = "https://github.com/LidorPrototype/ChessGameIssue1";
     
+    p.appendChild(pText1);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(pText2);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(pText3);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(a);
+    
     modalContainer.appendChild(img);
     modalContainer.appendChild(h2);
     modalContainer.appendChild(p);
-//    modalContainer.appendChild(document.createElement("br"));
-    modalContainer.appendChild(a);
 }        //  Chess Game
 function createModalProject3(modalContainer){
     // Image - img tag
@@ -413,11 +418,6 @@ function createModalProject3(modalContainer){
     var pText1 = document.createTextNode("It's a mobile application for android using Java, this app is a password manager.");
     var pText2 = document.createTextNode("You can store your passwords and usernames, generate new passwords and back it all up to your google drive account.");
     var pText3 = document.createTextNode("It encrypts your data using my own algrithm and on the result of my algorithm it uses Sha-1 and/or Sha-256, everything is then stored on your smartphone locally using SharedPreferences and Sqlite database");
-    p.appendChild(pText1);
-    p.appendChild(document.createElement("br"));
-    p.appendChild(pText2);
-    p.appendChild(document.createElement("br"));
-    p.appendChild(pText3);
     // Link - a tag
     var a = document.createElement('a');
     var link = document.createTextNode("Google Play link!");
@@ -425,11 +425,17 @@ function createModalProject3(modalContainer){
     a.target = "_blank";
     a.href = "https://play.google.com/store/apps/details?id=com.LnY.passwordkit";
     
+    p.appendChild(pText1);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(pText2);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(pText3);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(a);
+    
     modalContainer.appendChild(img);
     modalContainer.appendChild(h2);
     modalContainer.appendChild(p);
-//    modalContainer.appendChild(document.createElement("br"));
-    modalContainer.appendChild(a);
 }        //  PasswordKit
 function createModalProject4(modalContainer){
     // Image - img tag
@@ -447,11 +453,6 @@ function createModalProject4(modalContainer){
     var pText1 = document.createTextNode("Here you will find a collection of implementations of virtual assistants implemented in Python.");
     var pText2 = document.createTextNode("Chatbots are intelligent enough to sense the context of the conversation and execute the right bot flow. However, chatbots cannot find answers or perform a set of activities on their own.");
     var pText3 = document.createTextNode("On the other hand, a virtual assistant can crawl through existing resources and offer assistance for a wide range of requests.");
-    p.appendChild(pText1);
-    p.appendChild(document.createElement("br"));
-    p.appendChild(pText2);
-    p.appendChild(document.createElement("br"));
-    p.appendChild(pText3);
     // Link - a tag
     var a = document.createElement('a');
     var link = document.createTextNode("Link to this project GitHub repository!");
@@ -459,11 +460,17 @@ function createModalProject4(modalContainer){
     a.target = "_blank";
     a.href = "https://github.com/LidorPrototype/Chatbot-Virtual-Assistant";
     
+    p.appendChild(pText1);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(pText2);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(pText3);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(a);
+    
     modalContainer.appendChild(img);
     modalContainer.appendChild(h2);
     modalContainer.appendChild(p);
-//    modalContainer.appendChild(document.createElement("br"));
-    modalContainer.appendChild(a);
 }        //  Chatbot & Virtual Asistant
 function createModalProject5(modalContainer){
     // Image - img tag
@@ -480,9 +487,6 @@ function createModalProject5(modalContainer){
     var p = document.createElement('p');
     var pText1 = document.createTextNode("This is a calculator with 3 options, it's in the Flutter language.");
     var pText2 = document.createTextNode("You can calculate anything you want using the limited scientific calculator, you can also calculate a tip and bill using the tip calculator option, and the third option is a currency converted which is limited to our donators only, you can donate 3/5/10 NIS any time you want and get the currency converter permanently.");
-    p.appendChild(pText1);
-    p.appendChild(document.createElement("br"));
-    p.appendChild(pText2);
     // Link - a tag
     var a = document.createElement('a');
     var link = document.createTextNode("Google Play link!");
@@ -490,11 +494,15 @@ function createModalProject5(modalContainer){
     a.target = "_blank";
     a.href = "https://play.google.com/store/apps/details?id=com.lidorfirstflutter.tip_calculator_flutter";
     
+    p.appendChild(pText1);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(pText2);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(a);
+    
     modalContainer.appendChild(img);
     modalContainer.appendChild(h2);
     modalContainer.appendChild(p);
-//    modalContainer.appendChild(document.createElement("br"));
-    modalContainer.appendChild(a);
 }        //  AllCalculator
 function createModalProject6(modalContainer){
     // Image - img tag
@@ -513,13 +521,6 @@ function createModalProject6(modalContainer){
     var pText2 = document.createTextNode("Snake is a video game that originated during the late 1970s in arcades becoming something of a classic.");
     var pText3 = document.createTextNode("The player controls a long, thin creature, resembling a snake, which roams around on a bordered plane, picking up food, trying to avoid hitting its own tail or the edges of the playing area.");
     var pText4 = document.createTextNode("The game available in Java, JavaScript, Python.");
-    p.appendChild(pText1);
-    p.appendChild(document.createElement("br"));
-    p.appendChild(pText2);
-    p.appendChild(document.createElement("br"));
-    p.appendChild(pText3);
-    p.appendChild(document.createElement("br"));
-    p.appendChild(pText4);
     // Link - a tag
     var a = document.createElement('a');
     var link = document.createTextNode("Link to this project GitHub repository!");
@@ -527,13 +528,56 @@ function createModalProject6(modalContainer){
     a.target = "_blank";
     a.href = "https://github.com/LidorPrototype/SnakeGamesCollection";
     
+    p.appendChild(pText1);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(pText2);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(pText3);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(pText4);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(a);
+    
     modalContainer.appendChild(img);
     modalContainer.appendChild(h2);
     modalContainer.appendChild(p);
-//    modalContainer.appendChild(document.createElement("br"));
-    modalContainer.appendChild(a);
 }        //  Snake Games
 function createModalProject7(modalContainer){
+    // Image - img tag
+    var img = document.createElement('img');
+    img.src = 'images/Projects/web_scrapers.png';
+    img.setAttribute('width', '100%');
+    img.setAttribute('height', '225px');
+    img.style.borderBottom = "1px solid #595959";
+    // Title - h2 tag with text element
+    var h2 = document.createElement('h2');
+    var h2Text = document.createTextNode("Web Scrapers");
+    h2.appendChild(h2Text);
+    // Text - p tag with text element
+    var p = document.createElement('p');
+    var pText1 = document.createTextNode("A list of few different web scrapers I created (for Amazon, Twitter, IMDb and more)");
+    var pText2 = document.createTextNode("Each scraper works in a different way, some need input or limits from the person operating the scripts.");
+    var pText3 = document.createTextNode("Libraries I used for this including but not limited to are BeautifulSoup, Selenium, csv, requests, re and more.");
+    // Link - a tag
+    var a = document.createElement('a');
+    var link = document.createTextNode("Link to this project GitHub repository!");
+    a.appendChild(link);
+    a.target = "_blank";
+    a.href = "https://github.com/LidorPrototype/Web-Scrapers";
+    
+    p.appendChild(pText1);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(pText2);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(pText3);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(a);
+    
+    modalContainer.appendChild(img);
+    modalContainer.appendChild(h2);
+    modalContainer.appendChild(p);
+}       //  Web Scrapers
+function createModalProject8(modalContainer){
     // Image - img tag
     var img = document.createElement('img');
     img.src = 'images/Projects/Cubethon-transparent.png';
@@ -548,12 +592,6 @@ function createModalProject7(modalContainer){
     var p = document.createElement('p');
     var pText1 = document.createTextNode("This is a simple game in C# of a red block that trying to avoid collision with other obstacles.");
     var pText2 = document.createTextNode("The game is devided into level, each level contains more and more obstacles, the player speed is increasing, different surface frictions and more.");
-    var pText3 = document.createTextNode("This game is suitable for Desktop and Mobile.");
-    p.appendChild(pText1);
-    p.appendChild(document.createElement("br"));
-    p.appendChild(pText2);
-    p.appendChild(document.createElement("br"));
-    p.appendChild(pText3);
     // Link - a tag
     var a = document.createElement('a');
     var link = document.createTextNode("Link to this project GitHub repository!");
@@ -561,13 +599,20 @@ function createModalProject7(modalContainer){
     a.target = "_blank";
     a.href = "https://github.com/LidorPrototype/CUBETHON";
     
+    var pText3 = document.createTextNode("This game is suitable for Desktop and Mobile.");
+    p.appendChild(pText1);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(pText2);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(pText3);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(a);
+    
     modalContainer.appendChild(img);
     modalContainer.appendChild(h2);
     modalContainer.appendChild(p);
-//    modalContainer.appendChild(document.createElement("br"));
-    modalContainer.appendChild(a);
 }        //  CUBETHON
-function createModalProject8(modalContainer){
+function createModalProject9(modalContainer){
     // Image - img tag
     var img = document.createElement('img');
     img.src = 'images/Projects/Stickr.png';
@@ -583,11 +628,6 @@ function createModalProject8(modalContainer){
     var pText1 = document.createTextNode("This is a sticker application in Java for whatsapp, sticker designer is Kiril G.");
     var pText2 = document.createTextNode("It comes with only stickers in the hebrew language for now, it contain some ads and it allows you to add those stickers to your whatsapp freely, only for the featured pack you need to watch a short ad.");
     var pText3 = document.createTextNode("It's connected to Firebase and gets from it the statistics (release date, likes, downloads) as well as which pack is the featured one and also the most updated app version which allow the user to know when there is an update and whether the update is a must or not base on a FireBase fields.");
-    p.appendChild(pText1);
-    p.appendChild(document.createElement("br"));
-    p.appendChild(pText2);
-    p.appendChild(document.createElement("br"));
-    p.appendChild(pText3);
     // Link - a tag
     var a = document.createElement('a');
     var link = document.createTextNode("Google Play link!");
@@ -595,12 +635,19 @@ function createModalProject8(modalContainer){
     a.target = "_blank";
     a.href = "https://play.google.com/store/apps/details?id=com.l_es.kiril_stickers";
     
+    p.appendChild(pText1);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(pText2);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(pText3);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(a);
+    
     modalContainer.appendChild(img);
     modalContainer.appendChild(h2);
     modalContainer.appendChild(p);
-    modalContainer.appendChild(a);
 }        //  Stickr
-function createModalProject9(modalContainer){
+function createModalProject10(modalContainer){
     // Image - img tag
     var img = document.createElement('img');
     img.src = 'images/Projects/falling-blocks.png';
@@ -615,9 +662,6 @@ function createModalProject9(modalContainer){
     var p = document.createElement('p');
     var pText1 = document.createTextNode("This is a Falling Blocks implementation in Unity using C#.");
     var pText2 = document.createTextNode("Falling Blocks is a game where you ( the player ) need to move from side to side in order to avoid collision with the blocks that are falling from the top of the screen ( and top of the sides ), the blocks are coming in random direstions, shapes and sizes and the more you progress in the game the faster the blocks will fall.");
-    p.appendChild(pText1);
-    p.appendChild(document.createElement("br"));
-    p.appendChild(pText2);
     // Link - a tag
     var a = document.createElement('a');
     var link = document.createTextNode("Link to this project GitHub repository!");
@@ -625,13 +669,17 @@ function createModalProject9(modalContainer){
     a.target = "_blank";
     a.href = "https://github.com/LidorPrototype/FallingBlocks";
     
+    p.appendChild(pText1);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(pText2);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(a);
+    
     modalContainer.appendChild(img);
     modalContainer.appendChild(h2);
     modalContainer.appendChild(p);
-//    modalContainer.appendChild(document.createElement("br"));
-    modalContainer.appendChild(a);
 }        //  FallingBlocks
-function createModalProject10(modalContainer){
+function createModalProject11(modalContainer){
     // Image - img tag
     var img = document.createElement('img');
     img.src = 'images/Projects/tic-tac-toe.png';
@@ -646,9 +694,6 @@ function createModalProject10(modalContainer){
     var p = document.createElement('p');
     var pText1 = document.createTextNode("This is the famous game Tic Tac Toe / noughts and crosses. There are Xs and Os, the players take turns marking the spaces in a 3×3 grid. The first player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner. You can play against the computer or against your friend. The computer looks for the quickest way to win in the least moves.");
     var pText2 = document.createTextNode("The game available in Java, JavaScript, C++, C#, Python.");
-    p.appendChild(pText1);
-    p.appendChild(document.createElement("br"));
-    p.appendChild(pText2);
     // Link - a tag
     var a = document.createElement('a');
     var link = document.createTextNode("Link to this project GitHub repository!");
@@ -656,13 +701,17 @@ function createModalProject10(modalContainer){
     a.target = "_blank";
     a.href = "https://github.com/LidorPrototype/TicTacToesCollection";
     
+    p.appendChild(pText1);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(pText2);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(a);
+    
     modalContainer.appendChild(img);
     modalContainer.appendChild(h2);
     modalContainer.appendChild(p);
-//    modalContainer.appendChild(document.createElement("br"));
-    modalContainer.appendChild(a);
 }       //  TicTacToesCollection
-function createModalProject11(modalContainer){
+function createModalProject12(modalContainer){
     // Image - img tag
     var img = document.createElement('img');
     img.src = 'images/Projects/GenericHashTable.png';
@@ -680,6 +729,13 @@ function createModalProject11(modalContainer){
     var pText3 = document.createTextNode("2. Removing an element");
     var pText4 = document.createTextNode("3. Searching for an element");
     var pText5 = document.createTextNode("The HashTable implemented by using an array that at each index of the array, there is a pointer to a linked list. The HashTable is support int and strings.");
+    // Link - a tag
+    var a = document.createElement('a');
+    var link = document.createTextNode("Link to this project GitHub repository!");
+    a.appendChild(link);
+    a.target = "_blank";
+    a.href = "https://github.com/LidorPrototype/GenericHashtable";
+    
     p.appendChild(pText1);
     p.appendChild(document.createElement("br"));
     p.appendChild(pText2);
@@ -689,19 +745,14 @@ function createModalProject11(modalContainer){
     p.appendChild(pText4);
     p.appendChild(document.createElement("br"));
     p.appendChild(pText5);
-    // Link - a tag
-    var a = document.createElement('a');
-    var link = document.createTextNode("Link to this project GitHub repository!");
-    a.appendChild(link);
-    a.target = "_blank";
-    a.href = "https://github.com/LidorPrototype/GenericHashtable";
+    p.appendChild(document.createElement("br"));
+    p.appendChild(a);
     
     modalContainer.appendChild(img);
     modalContainer.appendChild(h2);
     modalContainer.appendChild(p);
-    modalContainer.appendChild(a);
 }       //  GenericHashtable
-function createModalProject12(modalContainer){
+function createModalProject13(modalContainer){
     // Image - img tag
     var img = document.createElement('img');
     img.src = 'images/Projects/http-client-transparent.png';
@@ -719,6 +770,13 @@ function createModalProject12(modalContainer){
     var pText3 = document.createTextNode("POST /t/ex2?tel=02-6655443&age=23 HTTP/1.0");
     var pText4 = document.createTextNode("Host: www.ptsv2.com \\n Content-length:6");
     var pText5 = document.createTextNode("some-text");
+    // Link - a tag
+    var a = document.createElement('a');
+    var link = document.createTextNode("Link to this project GitHub repository!");
+    a.appendChild(link);
+    a.target = "_blank";
+    a.href = "https://github.com/LidorPrototype/HTTP-Client";
+    
     p.appendChild(pText1);
     p.appendChild(document.createElement("br"));
     p.appendChild(pText2);
@@ -728,19 +786,14 @@ function createModalProject12(modalContainer){
     p.appendChild(pText4);
     p.appendChild(document.createElement("br"));
     p.appendChild(pText5);
-    // Link - a tag
-    var a = document.createElement('a');
-    var link = document.createTextNode("Link to this project GitHub repository!");
-    a.appendChild(link);
-    a.target = "_blank";
-    a.href = "https://github.com/LidorPrototype/HTTP-Client";
+    p.appendChild(document.createElement("br"));
+    p.appendChild(a);
     
     modalContainer.appendChild(img);
     modalContainer.appendChild(h2);
     modalContainer.appendChild(p);
-    modalContainer.appendChild(a);
 }       //  HTTP Client
-function createModalProject13(modalContainer){
+function createModalProject14(modalContainer){
     // Image - img tag
     var img = document.createElement('img');
     img.src = 'images/Projects/TowerDefense.png';
@@ -755,9 +808,6 @@ function createModalProject13(modalContainer){
     var p = document.createElement('p');
     var pText1 = document.createTextNode("This is a Tower Defense implementation in Unity using C#.");
     var pText2 = document.createTextNode("Tower defense (TD) is a subgenre of strategy video game where the goal is to defend a player's territories or possessions by obstructing the enemy attackers or by stopping enemies from reaching the exits, usually achieved by placing defensive structures on or along their path of attack.");
-    p.appendChild(pText1);
-    p.appendChild(document.createElement("br"));
-    p.appendChild(pText2);
     // Link - a tag
     var a = document.createElement('a');
     var link = document.createTextNode("Link to this project GitHub repository!");
@@ -765,13 +815,17 @@ function createModalProject13(modalContainer){
     a.target = "_blank";
     a.href = "https://github.com/LidorPrototype/TowerDefense_Issue-1";
     
+    p.appendChild(pText1);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(pText2);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(a);
+    
     modalContainer.appendChild(img);
     modalContainer.appendChild(h2);
     modalContainer.appendChild(p);
-//    modalContainer.appendChild(document.createElement("br"));
-    modalContainer.appendChild(a);
 }       //  Tower Defense
-function createModalProject14(modalContainer){
+function createModalProject15(modalContainer){
     // Image - img tag
     var img = document.createElement('img');
     img.src = 'images/Projects/disk-memory-managment.gif';
@@ -785,7 +839,6 @@ function createModalProject14(modalContainer){
     // Text - p tag with text element
     var p = document.createElement('p');
     var pText = document.createTextNode("Its a simultion of disk memory mengment , how the disk create files open them reads form them, delete and write... for each file we have inode (a structure) that points to blocks on disk and there will be the file data.");
-    p.appendChild(pText);
     // Link - a tag
     var a = document.createElement('a');
     var link = document.createTextNode("Link to this project GitHub repository!");
@@ -793,13 +846,15 @@ function createModalProject14(modalContainer){
     a.target = "_blank";
     a.href = "https://github.com/LidorPrototype/Disk-Memory-Managment";
     
+    p.appendChild(pText);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(a);
+    
     modalContainer.appendChild(img);
     modalContainer.appendChild(h2);
     modalContainer.appendChild(p);
-//    modalContainer.appendChild(document.createElement("br"));
-    modalContainer.appendChild(a);
 }       //  Disk Memory Managment
-function createModalProject15(modalContainer){
+function createModalProject16(modalContainer){
     // Image - img tag
     var img = document.createElement('img');
     img.src = 'images/Projects/MusicianFinder.png';
@@ -815,10 +870,6 @@ function createModalProject15(modalContainer){
     var pText1 = document.createTextNode(
         "This app is in Java, it will help musicians find other musicians or bands to play music with. Users can chat with other people, upload posts and connect with other people in their area. We did extensive use with FireBase (authentication, real-time database). It was created with friends, as a team."
     );
-    var pText2 = document.createTextNode("The app is not currently maintained.");
-    p.appendChild(pText1);
-    p.appendChild(document.createElement("br"));
-    p.appendChild(pText2);
     // Link - a tag
     var a = document.createElement('a');
     var link = document.createTextNode("Link to this project GitHub repository!");
@@ -826,13 +877,18 @@ function createModalProject15(modalContainer){
     a.target = "_blank";
     a.href = "https://github.com/LidorPrototype/MusicianFinder";
     
+    var pText2 = document.createTextNode("The app is not currently maintained.");
+    p.appendChild(pText1);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(pText2);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(a);
+    
     modalContainer.appendChild(img);
     modalContainer.appendChild(h2);
     modalContainer.appendChild(p);
-//    modalContainer.appendChild(document.createElement("br"));
-    modalContainer.appendChild(a);
 }       //  MusicianFinder
-function createModalProject16(modalContainer){
+function createModalProject17(modalContainer){
     // Image - img tag
     var img = document.createElement('img');
     img.src = 'images/Projects/http-server.jpg';
@@ -845,14 +901,10 @@ function createModalProject16(modalContainer){
     h2.appendChild(h2Text);
     // Text - p tag with text element
     var p = document.createElement('p');
+    p.setAttribute('max-height', '150px');
     var pText1 = document.createTextNode("HTTP server that: Constructs an HTTP response based on client's request and Sends the response to the client");
     var pText2 = document.createTextNode("The server creates the pool of threads in advanced and each time it needs a thread to handle a client connection, it take one from the pool or enqueue the request if there is no available thread in the pool.");
     var pText3 = document.createTextNode("There is always one socket where the server listens to connections and for each client connection request, the server opens another socket. and let a therad handle it.");
-    p.appendChild(pText1);
-    p.appendChild(document.createElement("br"));
-    p.appendChild(pText2);
-    p.appendChild(document.createElement("br"));
-    p.appendChild(pText3);
     // Link - a tag
     var a = document.createElement('a');
     var link = document.createTextNode("Link to this project GitHub repository!");
@@ -860,25 +912,18 @@ function createModalProject16(modalContainer){
     a.target = "_blank";
     a.href = "https://github.com/LidorPrototype/HTTP-Server";
     
+    p.appendChild(pText1);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(pText2);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(pText3);
+    p.appendChild(document.createElement("br"));
+    p.appendChild(a);
+    
     modalContainer.appendChild(img);
     modalContainer.appendChild(h2);
     modalContainer.appendChild(p);
-    modalContainer.appendChild(a);
 }       //  HTTP Server
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -590,13 +590,15 @@ section .title::after{
 /*    box-shadow: 5px 5px 10px 5px white;*/
 }
 #modal-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-/*  padding: 14px;  */
-  visibility: hidden;
-  opacity: 0;  
-  color: rgba(255,255,255,0.87);
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-height: 500px;
+    height: 500px;
+    overflow: auto;
+    visibility: hidden;
+    opacity: 0;  
+    color: rgba(255,255,255,0.87);
 }
 #modal-content a, #modal-content p, #modal-content h2 {
     padding-left: 24px;
