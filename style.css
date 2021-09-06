@@ -235,7 +235,11 @@ html{
 /** home section styling **/
 .home{
     display: flex;
-    background: url("images/bg/full-bg-2-compressed.jpg") no-repeat center;
+    background: url("images/bg/full-bg-2-compressed.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     height: 100vh;
     min-height: 500px;
     color: white;
@@ -1392,36 +1396,3 @@ footer span a:hover{
         width: 100%;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
