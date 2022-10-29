@@ -9,8 +9,7 @@ Hey, I’m Lidor Eliyahu Shelef
 ```
 
 
-
-My Linkedin: https://www.linkedin.com/in/lidor-e-s/
+My Linkedin: https://www.linkedin.com/in/lidor-e-s/<br>
 My GitHub: https://github.com/LidorPrototype
 
 ### Create by: Lidor Eliyahu Shelef (L-ES)
