@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="witdh=device-width, initial-scale=1.0">
+        <title>Lidor's Online Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+        <script src="https://npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+        <script src="cursor_whisps.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
+        <script src="script.js"></script>
+<!--        Browser Tab Icon    -->
+        <link rel="icon" type="image/png" href="images/l_es_tab_icon_logo.png">
+    </head>
+    <body>
+        <div id="snackbar">Website is still under constructions :)</div>
+<!--        <div id="snackbar">Please note, some of the icons<br/>or photos are not my design</div>-->
+        <div id="snackbar2">Hold down left mouse button for<br/>random whisps movement</div>
+        <div class="scroll-up-btn">
+            <img src="images/arrow_up.png">
+        </div>
+        <nav class="navbar">
+            <div class="max-width">
+                <div class="logo"><a href="#">L-ES portfo<span>lio.</span></a></div>
+                <ul class="menu">
+                    <li><a id="home-nav" href="#home" class="menu-btn">Home</a></li>
+                    <li><a id="about-nav" href="#slanted-div-about" class="menu-btn">About</a></li>
+                    <li><a id="projects-nav" href="#slanted-div-projects" class="menu-btn">Projects</a></li>
+                    <li><a id="skills-nav" href="#skills" class="menu-btn">Skills</a></li>
+                    <li><a id="courses-nav" href="#slanted-div-occ" class="menu-btn">Online Courses</a></li>
+                    <li><a id="contact-nav" href="#contact" class="menu-btn">Contact</a></li>
+                </ul>
+                <div class="menu-btn">
+                    <img src="images/menu_btn_white.png">
+                </div>
+            </div>
+        </nav>
+    <!--      home section start         -->
+        <section class="home" id="home">
+            <div class="max-width">
+                <img src="images/Projects/L-ES.png" style="height: 0; width: 0;">
+                <div class="home-whisps-container" id="home-whisps-container"></div>
+                <div class="home-content">
+                    <div class="text-1">
+                        <div class="rubber-band">
+                            <div class="band-hover">H</div>
+                            <div class="band-hover">e</div>
+                            <div class="band-hover">l</div>
+                            <div class="band-hover">l</div>
+                            <div class="band-hover">o</div>
+                            <div class="band-hover">,</div>&nbsp;
+                            <div class="band-hover">m</div>
+                            <div class="band-hover">y</div>&nbsp;
+                            <div class="band-hover">n</div>
+                            <div class="band-hover">a</div>
+                            <div class="band-hover">m</div>
+                            <div class="band-hover">e</div>&nbsp;
+                            <div class="band-hover">i</div>
+                            <div class="band-hover">s</div>
+                        </div>
+                    </div>
+                    <div class="text-2">
+                        <div class="rubber-band">
+                            <div class="band-hover">L</div>
+                            <div class="band-hover">i</div>
+                            <div class="band-hover">d</div>
+                            <div class="band-hover">o</div>
+                            <div class="band-hover">r</div>&nbsp;
+                            <div class="band-hover">E</div>
+                            <div class="band-hover">l</div>
+                            <div class="band-hover">i</div>
+                            <div class="band-hover">y</div>
+                            <div class="band-hover">a</div>
+                            <div class="band-hover">h</div>
+                            <div class="band-hover">u</div>&nbsp;
+                            <div class="band-hover">S</div>
+                            <div class="band-hover">h</div>
+                            <div class="band-hover">e</div>
+                            <div class="band-hover">l</div>
+                            <div class="band-hover">e</div>
+                            <div class="band-hover">f</div>
+                        </div>
+                    </div>
+                    <div class="text-3">
+                        <div class="rubber-band">
+                            <div class="band-hover">A</div>
+                            <div class="band-hover">n</div>
+                            <div class="band-hover">d</div>&nbsp;
+                            <div class="band-hover">I</div>
+                            <div class="band-hover">'</div>
+                            <div class="band-hover">m</div>&nbsp;
+                            <div class="band-hover">a</div>&nbsp;
+                            <span class="typing"></span>
+                        </div>
+                    </div>
+                    <a href="#contact" id="hire-me">Hire me</a>
+                </div>
+            </div>
+        </section>
+    <!--      about section start         -->
+        <section class="about" id="slanted-div-about">
+            <div class="max-width">
+                <h2 class="title">About me</h2>
+                <div class="about-content">
+                    <div class="column left">
+                        <img src="images/Me/banner_me.jpg">
+                    </div>
+                    <div class="column right">
+                        <div class="text">I'm Lidor and I'm a <span class="typing-2"></span></div>
+                        <p>
+                            My journey began at highschool where we learned a bit of the Assembly and C languages,
+                            that's when I realized that I'm drawn to the programming area, ever since then I sought out new opportunities and challenges, and so I started learning on my own many many languages (took a wee break during the army).
+                            <br>
+                            I am currently a Software Engineering student in my third year at the 
+                            <a id="basic-a" href="https://www.jce.ac.il/en/" target="_blank">Jerusalem Azrielly College of Engineering</a>.
+                            <br>
+                            I'm passionate about (and on my spair time I'm currently learning) about mobile development, (supervised / unsupervised) Deep Learning / Machine Learning, Computer Vision and more.
+                            <br>
+                            <span id="smaller-text">Currently working a temp job as a Shaare Tzedek hospital security guard,</span>
+                            <br>
+                            I also volunteer at <a id="k-shoa" href="https://www.k-shoa.org/index.php?language=eng" target="_blank">The Wellbeing for The Holocaust Survivors organization</a>.
+                        </p>
+                        <a id="cv-btn" href="download-files/CV-LidorEliyahuShelef.pdf" download="Lidor-CV" target="_blank">Download CV</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!--      projects section start         -->
+        <section class="projects" id="slanted-div-projects">
+            <div class="max-width">
+                <h2 class="title">My public projects</h2>
+                <div class="projects-grid-view">
+                  <div class="projects-nav">
+                    <ul class="projects-filter-nav">
+                      <li class="projects-filter" data-filter=".collapse" id="projects-collapse">Collapse</li>
+                      <li class="projects-filter" data-filter="*">All</li>
+                      <li class="projects-filter" data-filter=".mobile">Mobile</li>
+                      <li class="projects-filter" data-filter=".java">Java</li>
+                      <li class="projects-filter" data-filter=".python">Python</li>
+                      <li class="projects-filter" data-filter=".c-cpp">C & CPP</li>
+                      <li class="projects-filter" data-filter=".web">Web</li>
+                      <li class="projects-filter" data-filter=".os">OS</li>
+                      <li class="projects-filter" data-filter=".games">Games</li>
+                    </ul>
+                  </div><!-- Filter menu -->
+                  <div class="projects-grid">
+                    <div class="projects-grid-sizer"></div>
+<!--                <div class="projects-grid-item type">   type = which kind of project is it according to the filter menu            -->
+                    <div class="projects-grid-item web" onclick="displayProjects('1')">
+                      <div class="projects-item-wrapper">
+                        <img class="projects-image-container" src="images/Projects/L-ES.png">
+                        <div class="projects-content">
+                          <h3>L-ES Portfolio. - This Website</h3>
+                          <p>This one page website is an online portfolio of Lidor E.S (Me)</p>
+                        </div>
+                      </div>
+                    </div><!-- .grid-item --><!-- L-ES Portfolio. - This Website -->     <!-- CHECK! -->
+                    <div class="projects-grid-item java" onclick="displayProjects('2')">
+                      <div class="projects-item-wrapper">
+                        <img class="projects-image-container" src="images/Projects/chess.jpeg">
+                        <div class="projects-content">
+                          <h3>Chess Game</h3>
+                          <p>This is an implantation to the famous Chess game, it's you vs the computer</p>
+                        </div>
+                      </div>
+                    </div><!-- .grid-item --><!-- Chess Game -->                         <!-- CHECK! -->
+                    <div class="projects-grid-item mobile java" onclick="displayProjects('3')">
+                      <div class="projects-item-wrapper">
+                        <img class="projects-image-container" src="images/Projects/passwordkit.png">
+                        <div class="projects-content">
+                          <h3>PasswordKit</h3>
+                          <p>It's a mobile application for android using Java, this app is a password manager</p>
+                        </div>
+                      </div>
+                    </div><!-- .grid-item --><!-- PasswordKit -->                        <!-- CHECK! -->
+                    <div class="projects-grid-item python" onclick="displayProjects('4')">
+                      <div class="projects-item-wrapper">
+                        <img class="projects-image-container"  src="images/Projects/chatbot-va-black.png">
+                        <div class="projects-content">
+                          <h3>Chatbot & Virtual Assistant</h3>
+                          <p>Here you will find a collection of virtual assistants and chat bots implemented in Python.</p>
+                        </div>
+                      </div>
+                    </div><!-- .grid-item --><!-- Chatbot & Virtual Assistant -->        <!-- CHECK! -->
+                    <div class="projects-grid-item mobile" onclick="displayProjects('5')">
+                      <div class="projects-item-wrapper">
+                        <img class="projects-image-container" src="images/Projects/AllCalculator.png">
+                        <div class="projects-content">
+                          <h3>AllCalculator</h3>
+                          <p>This is a calculator with 3 options, it's in the Flutter language</p>
+                        </div>
+                      </div>
+                    </div><!-- .grid-item --><!-- AllCalculator -->                      <!-- CHECK! -->
+                    <div class="projects-grid-item games java python web" onclick="displayProjects('6')">
+                      <div class="projects-item-wrapper">
+                        <img class="projects-image-container"  src="images/Projects/snake-game.png">
+                        <div class="projects-content">
+                          <h3>Snake Game Collection</h3>
+                          <p>This is a collection of the famous Snake game, it comes in Java, Python and JavaScript</p>
+                        </div>
+                      </div>
+                    </div><!-- .grid-item --><!-- Snake Games -->                        <!-- CHECK! -->
+                    <div class="projects-grid-item python web" onclick="displayProjects('7')">
+                      <div class="projects-item-wrapper">
+                        <img class="projects-image-container" src="images/Projects/web_scrapers.png">
+                        <div class="projects-content">
+                          <h3>Web Scrapers</h3>
+                          <p>A list of few different web scrapers I created (for Amazon, Twitter and more)</p>
+                        </div>
+                      </div>
+                    </div><!-- .grid-item --><!-- Web Scraper -->                        <!-- CHECK! -->
+                    <div class="projects-grid-item games" onclick="displayProjects('8')">
+                      <div class="projects-item-wrapper">
+                        <img class="projects-image-container"  src="images/Projects/Cubethon-transparent.png">
+                        <div class="projects-content">
+                          <h3>CUBETHON</h3>
+                          <p>This is a simple game in C# of a red block that trying to avoid collision with other obstacles</p>
+                        </div>
+                      </div>
+                    </div><!-- .grid-item --><!-- CUBETHON -->                           <!-- CHECK! -->
+                    <div class="projects-grid-item mobile java" onclick="displayProjects('9')">
+                      <div class="projects-item-wrapper">
+                        <img class="projects-image-container" src="images/Projects/Stickr.png">
+                        <div class="projects-content">
+                          <h3>Stickr</h3>
+                          <p>This is a sticker application in Java for whatsapp, sticker designer is Kiril G</p>
+                        </div>
+                      </div>
+                    </div><!-- .grid-item --><!-- Stickr -->                             <!-- CHECK! -->
+                    <div class="projects-grid-item games" onclick="displayProjects('10')">
+                      <div class="projects-item-wrapper">
+                        <img class="projects-image-container"  src="images/Projects/falling-blocks.png">
+                        <div class="projects-content">
+                          <h3>Falling Blocks</h3>
+                          <p>This is a Falling Blocks implementation in Unity using C#</p>
+                        </div>
+                      </div>
+                    </div><!-- .grid-item --><!-- FallingBlocks -->                      <!-- CHECK! -->
+                    <div class="projects-grid-item games java python c-cpp web" onclick="displayProjects('11')">
+                      <div class="projects-item-wrapper">
+                        <img class="projects-image-container"  src="images/Projects/tic-tac-toe.png">
+                        <div class="projects-content">
+                          <h3>TicTacToe Collection</h3>
+                          <p>This is the famous game Tic Tac Toe / noughts and crosses</p>
+                        </div>
+                      </div>
+                    </div><!-- .grid-item --><!-- TicTacToesCollection -->               <!-- CHECK! -->
+                    <div class="projects-grid-item c-cpp" onclick="displayProjects('12')">
+                      <div class="projects-item-wrapper">
+                        <img class="projects-image-container"  src="images/Projects/GenericHashTable.png">
+                        <div class="projects-content">
+                          <h3>Generic Hashtable</h3>
+                          <p>HashTables are data structures that support few operations on it's data</p>
+                        </div>
+                      </div>
+                    </div><!-- .grid-item --><!-- GenericHashtable -->                   <!-- CHECK! -->
+                    <div class="projects-grid-item c-cpp" onclick="displayProjects('13')">
+                      <div class="projects-item-wrapper">
+                        <img class="projects-image-container" src="images/Projects/http-client-transparent.png">
+                        <div class="projects-content">
+                          <h3>HTTP Client</h3>
+                          <p>An HTTP client that constructs an HTTP request based on user’s command line input</p>
+                        </div>
+                      </div>
+                    </div><!-- .grid-item --><!-- HTTP Client -->                        <!-- CHECK! -->
+                    <div class="projects-grid-item games" onclick="displayProjects('14')">
+                      <div class="projects-item-wrapper">
+                        <img class="projects-image-container"  src="images/Projects/TowerDefense.png">
+                        <div class="projects-content">
+                          <h3>Tower Defense</h3>
+                          <p>This is a Tower Defense implementation in Unity using C#</p>
+                        </div>
+                      </div>
+                    </div><!-- .grid-item --><!-- Tower Defense -->                      <!-- CHECK! -->
+                    <div class="projects-grid-item c-cpp os" onclick="displayProjects('15')">
+                      <div class="projects-item-wrapper">
+                        <img class="projects-image-container"  src="images/Projects/disk-memory-managment.gif">
+                        <div class="projects-content">
+                          <h3>Disk Memory Managment</h3>
+                          <p>Its a simultion of disk memory mengment , how the disk does it's operations</p>
+                        </div>
+                      </div>
+                    </div><!-- .grid-item --><!-- Disk Memory Managment -->              <!-- CHECK! -->
+                    <div class="projects-grid-item mobile java" onclick="displayProjects('16')">
+                      <div class="projects-item-wrapper">
+                        <img class="projects-image-container" src="images/Projects/MusicianFinder.png">
+                        <div class="projects-content">
+                          <h3>MusicianFinder</h3>
+                          <p>This app is in Java, it will help musicians find other musicians or bands to play music with</p>
+                        </div>
+                      </div>
+                    </div><!-- .grid-item --><!-- MusicianFinder -->                     <!-- CHECK! -->
+                    <div class="projects-grid-item c-cpp" onclick="displayProjects('17')">
+                      <div class="projects-item-wrapper">
+                        <img class="projects-image-container" src="images/Projects/http-server.jpg">
+                        <div class="projects-content">
+                          <h3>HTTP Server</h3>
+                          <p>Constructs an HTTP response based on client's request and Sends the response to the client</p>
+                        </div>
+                      </div>
+                    </div><!-- .grid-item --><!-- HTTP Server -->                        <!-- CHECK! -->
+                  </div><!-- .grid -->
+                </div>
+            </div>
+            <div id="modal-1" class="modal-container">
+              <div id="modal-dialog">    
+                <svg id="modal-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                      <defs>
+                        <linearGradient id="polygon-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" style="stop-color:#e63946;stop-opacity:1" />
+                          <stop offset="50%" style="stop-color:#e76f51;stop-opacity:1" />
+                          <stop offset="100%" style="stop-color:#f4a261;stop-opacity:1" />
+                        </linearGradient>
+                      </defs>
+                  <polygon id="modal-polygon" />
+                </svg>
+                <div id="modal-content">
+                  <h2>I'm a modal</h2>
+                </div>
+              </div>
+            </div>
+        </section>
+    <!--      skills section start         -->
+        <section class="skills" id="skills">
+            <div class="max-width">
+                <h2 class="title">My skills</h2>
+                <div class="skills-content">
+                    <div class="column left">
+                        <div class="text">My creative skills & expiriences.</div>
+                        <p>
+                            I had a few projects as a team leader as well as a few projects as a team member, I'm a responsible team player and always in pursuit of knowledge, I also try to learn more about the field of AI in general, I enjoy also mobile and web development!
+                            <br>
+                            Languages I know includes but not limited to Java, Python, JavaScript, Flutter, C# and more. 
+                            Familiar with workspaces such as Eclipse, Android Studio, Anaconda, Unity, PyCharm and more.
+                            <br>
+                            For more in depth listing, download my CV 😉
+                        </p>
+                        <a href="#slanted-div-about">Grab my CV</a>
+                    </div>
+                    <div class="column right tooltip-box">
+                        <div class="bars">
+                            <div class="info">
+                                <span>Data Science</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="line data-science"></div>
+                        </div>
+                        <div class="bars">
+                            <div class="info">
+                                <span>Mobile Development</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="line mobile"></div>
+                        </div>
+                        <div class="bars">
+                            <div class="info">
+                                <span>Front-end Development</span>
+                                <span>72%</span>
+                            </div>
+                            <div class="line front-end"></div>
+                        </div>
+                        <div class="bars">
+                            <div class="info">
+                                <span>Back-end Development</span>
+                                <span>62%</span>
+                            </div>
+                            <div class="line back-end"></div>
+                        </div>
+                        <div class="bars">
+                            <div class="info">
+                                <span>Desktop Development</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="line desktop"></div>
+                        </div>
+                        <span class="tooltip-span">This area shows:<br>What percentage of the languages I know <br>fall into each category.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!--      online courses section start         -->
+        <section class="online-courses" id="slanted-div-occ">
+            <div class="max-width">
+                <h2 class="title">Online courses</h2>
+                <div class="online-courses-content">
+                    <div class="card card-collapsible-github">
+                        <div class="box">
+                            <img src="images/github_icon_white.png">
+                        </div>
+                    </div><!-- Github Link -->
+                    <div class="card card-collapsible" id="0">
+                        <div class="box">
+                            <img src="images/udemy_logo.png">
+                            <div class="text">Udemy</div>
+                        </div>
+                    </div><!-- Udemy -->
+                    <div class="card card-collapsible" id="1">
+                        <div class="box">
+                            <img src="images/udacity_logo.png">
+                            <div class="text">Udacity</div>
+                        </div>
+                    </div><!-- Udacity -->
+                    <div class="card card-collapsible" id="2">
+                        <div class="box">
+                            <img src="images/coursera_logo.png">
+                            <div class="text">Coursera</div>
+                        </div>
+                    </div><!-- Coursera -->
+                    <div class="card card-collapsible" id="3">
+                        <div class="box">
+                            <img src="images/edX_logo.png">
+                            <div class="text">edX</div>
+                        </div>
+                    </div><!-- edX -->
+                    <div class="collapsible-container">
+                          <div class="cc-content cc-first">
+                            <div id="cc-p">
+                                <div class="numberlist" id="cc-udemy">
+                                  <ol>
+                                    <li><a href="https://www.udemy.com/course/learn-python-build-a-virtual-assistant-in-python/" target="_blank">Learn Python: Build a Virtual Assistant</a></li>
+                                    <li><a href="https://www.udemy.com/course/python-game-development-creating-a-snake-game-from-scratch/" target="_blank">Python Game Development : Creating a Snake Game from scratch</a></li>
+                                    <li><a href="https://www.udemy.com/course/practice-java-by-building-projects/" target="_blank">Practice Java by Building Projects</a></li>
+                                    <li><a href="https://www.udemy.com/course/code-your-first-game/" target="_blank">Code Your First Game: Arcade Classic in JavaScript on Canvas</a></li>
+                                    <li><a href="https://www.udemy.com/course/learn-how-to-use-all-50-java-keywords/" target="_blank">Learn how to use all Java keywords</a></li>
+                                    <li><a href="https://www.udemy.com/course/c-sharp-basics-learn-to-code-the-hard-way/" target="_blank">C# Basics for Beginners- Learn By Doing</a></li>
+                                    <li><a href="https://www.udemy.com/course/basics-of-object-oriented-programming-with-csharp/" target="_blank">Basics of Object Oriented Programming with C#</a></li>
+                                    <li><a href="https://www.udemy.com/course/learn-sql-by-writing-queries/" target="_blank">Learn SQL by Writing Queries</a></li>
+                                    <li><a href="https://www.udemy.com/course/just-enough-python/" target="_blank">Python Programming for Beginners in Data Science</a></li>
+                                    <li><a href="https://www.udemy.com/course/free-flutter-beginner-tutorial-build-own-app/" target="_blank">Flutter Beginner Tutorial - Build own App</a></li>
+                                    <li><a href="https://www.udemy.com/course/pythoncv/" target="_blank">Learn Computer Vision with OpenCV Library using Python</a></li>
+                                    <li><a href="https://www.udemy.com/course/linear-regression-with-artificial-neural-network/" target="_blank">Artificial Neural Network for Regression</a></li>
+                                    <li><a href="https://www.udemy.com/course/learnkeras/">Learn Keras: Build 4 Deep Learning Applications</a></li>
+                                    <li><a href="https://www.udemy.com/course/android-programming-with-kotlin-for-beginner-calculator-app/" target="_blank">Android Programming with Kotlin for beginner: Calculator App</a></li>
+                                    <li><a href="https://www.udemy.com/course/web-development-essentials-html5-css-javascript/" target="_blank">Web Development Essentials - HTML5, CSS, Javascript</a></li>
+                                    <li><a href="https://www.udemy.com/course/dart-intermediate-course/" target="_blank">Dart - Intermediate Course</a></li>
+                                  </ol>
+                                </div>
+                            </div>
+                          </div><!-- Udemy -->
+                          <div class="cc-content">
+                            <div id="cc-p">
+                                <div class="numberlist" id="cc-udacity">
+                                  <ol>
+                                    <li><a href="https://www.udacity.com/course/intro-to-tensorflow-for-deep-learning--ud187" target="_blank">Intro to TensorFlow for Deep Learning by TensorFlow</a></li>
+                                    <li><a href="https://www.udacity.com/course/advanced-android-app-development--ud855" target="_blank">Advanced Android App Development by Google</a></li>
+                                    <li><a href="https://www.udacity.com/course/building-high-conversion-web-forms--ud890" target="_blank">Building High Conversion Web Forms</a></li>
+                                    <li><a href="https://www.udacity.com/course/programming-languages--cs262" target="_blank">Programming Languages - Building a Web Browser</a></li>
+                                  </ol>
+                                </div>
+                            </div>
+                          </div><!-- Udacity -->
+                          <div class="cc-content">
+                            <div id="cc-p">
+                                <div class="numberlist" id="cc-coursera">
+                                    <ol>
+                                        <li><a href="https://www.coursera.org/learn/c-for-everyone" target="_blank">C for Everyone: Programming Fundamentals by University of California, Santa Cruz</a></li>
+                                        <li><a href="https://www.coursera.org/learn/introduction-computer-vision-watson-opencv" target="_blank">Introduction to Computer Vision with Watson and OpenCV by IBM</a></li>
+                                        <li><a href="https://www.coursera.org/specializations/programming-unity-game-development" target="_blank">C# Programming for Unity Game Development Specialization by University of Colorado</a></li>
+                                    </ol>
+                                </div>
+                            </div>
+                          </div><!-- Coursera -->
+                          <div class="cc-content">
+                            <div id="cc-p">
+                                <div class="numberlist" id="cc-edx">
+                                  <ol>
+                                    <li><a href="https://www.edx.org/course/introduction-to-cybersecurity" target="_blank">Introduction to Cybersecurity</a></li>
+                                  </ol>
+                                </div>
+                            </div>
+                          </div><!-- edX -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!--      contact section start         -->
+        <section class="contact" id="contact">
+            <div class="center">
+                <div class="max-width1" >
+                   <h2 class="title">Contact me</h2>
+                    <div class="contact-content" >          
+                        <div class="column left">
+                            <div class="up-side">
+                                <div class="text">Interested in working together?<br/> We should queue up a chat. I’ll buy the <span id="coffee-hover">coffee☕</span>.</div>
+                                <div class="icons">
+                                    <div class="row">
+                                        <img src="images/user.png">
+                                        <div class="info">
+                                            <div class="head">Name</div>
+                                            <div class="sub-title">Lidor Eliyahu Shelef</div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <img src="images/home.png">
+                                        <div class="info">
+                                            <div class="head">Address</div>
+                                            <div class="sub-title">Jerusalem-Ma'ale Adumim, Israel</div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <img src="images/email.png">
+                                        <div class="info">
+                                            <div class="head">Email</div>
+                                            <div class="sub-title"><a href="mailto:ivanlidor98@gmail.com">ivanlidor98@gmail.com</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="down-side">
+                                <div class="text">Find me on social media</div>
+                                <div class="social-media-ref">
+                                    <div class="row-social">
+                                        <a href="https://www.linkedin.com/in/lidor-e-s/" target="_blank"><img src="images/linkedin_icon.png"></a>
+                                        <div class="info">
+                                            <div class="head">LinkedIn: Lidor Eliyahu Shelef</div>
+                                        </div>
+                                    </div>
+                                    <div class="row-social">
+                                        <a href="https://github.com/LidorPrototype" target="_blank"><img src="images/github_icon.png"></a>
+                                        <div class="info">
+                                            <div class="head">Github: LidorPrototype</div>
+                                        </div>
+                                    </div>
+                                    <div class="row-social">
+                                        <a href="https://www.facebook.com/ivanlidor" target="_blank"><img src="images/facebook.png"></a>
+                                        <div class="info">
+                                            <div class="head">Facebook: Lidor Eliyahu Shelef</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="images/upper_or_icon_long.png" id="contact-middle-stamp">
+                        <div class="column right">
+                            <div class="form-card-container">
+                              <div class='shadow'></div>
+                              <div class="form-card">
+                                <div class="form-card__front">
+                                  <p class='form__swap-link' id="flip-hover"><label id="contact-fron-text">Allow me to make your<br>life easier by clicking<br>here 😎</label></p>
+                                </div>
+                                <div class="form-card__back">
+                                  <div class="form-row">
+                                    <div class="outer form__swap-link">
+                                      <div class="inner">
+                                        <label>Close</label>
+                                      </div>
+                                    </div>
+                                    <form id="contact-form" action="https://formspree.io/f/mnqlqqpy" method="POST">
+                                      <span>
+                                        <input class="slider" id="name" name="name" type="text" required/>
+                                        <label for="name">Name *</label>
+                                      </span>
+                                      <span>
+                                        <input class="slider" id="email" name="email" type="email" required/>
+                                        <label for="email">Email *</label>
+                                      </span>
+                                      <span>
+                                        <input class="slider" id="phone" name="phone" type="number" minlength="8"/>
+                                        <label for="phone">Phone</label>
+                                      </span>
+                                      <span>
+                                        <textarea class="slider" id="msg" name="msg" maxlength="500"></textarea>
+                                        <label for="msg">Message</label>
+                                      </span>
+                                      <span id="span-checkbox">
+                                        <label id="checkbox-info">By using this form you agree with the storage and handling of your data by this website and formspree.</label>
+                                        <br>
+                                        <input id="checkbox" name="checkbox" type="checkbox" required/>
+                                        <label for="checkbox" id="checkbox-label">I Agree *</label>
+                                      </span>
+                                      <span>
+                                        <input type="submit" id="submit"/>
+                                      </span>
+                                    </form>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!--      footer section start         -->
+        <footer>
+            <center><span>Created By <a href="#">L-ES</a> | <img src="images/copyright.png" height="13px"> 2021 All rights reserves.</span></center>
+        </footer>
+    </body>
+</html>
+
+
+
+
+
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
