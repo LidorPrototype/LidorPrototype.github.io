@@ -2,14 +2,14 @@
 
 
 ```
-Hey, I’m Lidor Eliyahu Shelef
+Hey, I’m Lidor E-S
 👀 I’m a software engineer and a Data Scientist
-🌱 I have learned: Python, Java, Flutter, C#, C, C++, JavaScript, SQL and many more...
-📫 How to reach me ivanlidor98@gmail.com
+🌱 I have learned: Python, SQL, Java, Flutter, C#, C, C++, JavaScript and many more...
+📫 How to reach me [ivanlidor98@gmail.com](mailto:ivanlidor98@gmail.com)
 ```
 
 
-My Linkedin: https://www.linkedin.com/in/lidor-e-s/<br>
-My GitHub: https://github.com/LidorPrototype
+Linkedin: https://www.linkedin.com/in/lidor-e-s/<br>
+GitHub: https://github.com/LidorPrototype
 
-### Create by: Lidor Eliyahu Shelef (L-ES)
+### Create by: Lidor E-S(L-ES)
