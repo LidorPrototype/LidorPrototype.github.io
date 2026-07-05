@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lidor Eliyahu Shelef Online Portfolio</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript
+      ><link rel="stylesheet" href="assets/css/noscript.css"
+    /></noscript>
+  </head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header">
+        <!-- <div class="logo">
+          <span class="icon fa-gem"></span>
+        </div> -->
+        <div class="content">
+          <div class="inner">
+            <h1>Lidor Eliyahu Shelef</h1>
+            <p>
+              Software Engineer and Data Scientist
+            </p>
+          </div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#python">Python</a></li>
+            <li><a href="#Java">Java</a></li>
+            <li><a href="#CPP">C & CPP</a></li>
+            <li><a href="#OS">OS</a></li>
+            <li><a href="#web">Web</a></li>
+            <li><a href="#mobile_apps">Mobile</a></li>
+            <li><a href="#games">Games (mixed)</a></li>
+            <!-- <li><a href="#elements">Elements</a></li> -->
+          </ul>
+        </nav>
+      </header>
+      <!-- Main -->
+      <div id="main">
+        <!-- Python -->
+        <article id="python">
+            <h2 class="major">Python</h2>
+            <span class="image main"
+            ><img src="images/python.jpg" alt=""
+            /></span>
+            <!-- Bag-of-Projects -->
+            <p>
+                <h2>Bag of Projects</h2>
+                <img src="images/bagofprojects.gif" alt="" style="width: 350px; height: 300px;"/>
+                <br>
+                A repository filled with several Machine Learning, Deep Learning, and even Data Analysis projects I have completed. 
+                The primary goal of this repository is to demonstrate a variety of algorithms and techniques. 
+                Each finalized project will also include a text file called "Algorithm Brief" that explains the algorithm or technique used. 
+                This repository contains a variety of projects, ranging from small to large in scope (refer to the README for a complete list).
+                <br>
+                <br>
+                To view the code &nbsp; <a href="https://github.com/LidorPrototype/Bag-of-Projects" target="_blank"
+                style="font-size: medium;
+                color: #90B8F8;
+                ">Click Here</a>
+                <br>
+                <br>
+            </p>
+            <!-- TableNetTable2df -->
+            <p>
+                <h2>TableNetTable2df</h2>
+                <img src="images/tablenet.gif" alt="" style="width: 350px; height: 300px;"/>
+                <br>
+                In this project I implemented the TableNet model using PyTorch, the basic idea is to get all sort of documents, 
+                convert them to images and then using th emodel detect the tables inside of them, 
+                then I crop the tables or jsut hold the coordinates of it.<br>
+                Next part of it is to fix the gridlines ot be proper gridline and then use pytesseract to extract the 
+                tabular data form it and process it into a dataframe.
+                <br>
+                To read the Medium articles:
+                <br>&nbsp;&nbsp;
+                <a href="https://medium.com/@lidores98/table-detection-and-extraction-tablenet-deep-learning-model-with-pytorch-from-images-64489e92b641" target="_blank" style="font-size: small; color: #90B8F8;">
+                  1) Table Detection and Extraction — TableNet, Deep Learning model with PyTorch from images
+                </a>
+                <br>&nbsp;&nbsp;
+                <a href="https://medium.com/@lidores98/perfecting-imperfect-table-gridlines-a-step-by-step-guide-using-python-opencv-9831cc11e5ee" target="_blank" style="font-size: small; color: #90B8F8;">
+                  2) Perfecting Imperfect Table Gridlines: A Step-by-Step Guide using Python OpenCV
+                </a>
+                <br>&nbsp;&nbsp;
+                <a href="https://medium.com/@lidores98/image-table-to-dataframe-using-python-ocr-773c8afb713d" target="_blank" style="font-size: small; color: #90B8F8;">
+                  3) Image Table to DataFrame using Python OCR
+                </a>
+                <br>
+                To view the code &nbsp; <a href="https://github.com/LidorPrototype/TableNetTable2df" target="_blank"
+                style="font-size: medium;
+                color: #90B8F8;
+                ">Click Here</a>
+                <br>
+                <br>
+            </p>
+            <!-- AutoScraper -->
+            <p>
+                <h2>AutoScraper</h2>
+                <img src="images/autoscraper1.png" alt="" style="width: 350px; height: 300px;"/>
+                <br>
+                This project is made for an automatic web scraping to collect data for machine learning and deep learning projects.<br>
+                This project have 2 versions Streamlit and FastAPI version (Streamlit is the older one), services include but not limited to:
+                Raw (scraping based on similarities), API downloading, downloading various formats from the website <a href="https://maya.tase.co.il/">Maya</a>,
+                scraping the web based on user queries, PDF files parsing, Scrape predefined specific content from the <a href="https://apis.cbs.gov.il">OECD</a> website.
+                FastAPI version also include management services like: sending an email, handling tables data in Azure Data Lake, handling Airflow DAGs creation and suitable data in Azure Blob Containers.<br>
+                The project is using Requests, BeautifulSoup, Scrapy and other libraries.
+                <br>
+                To view the code &nbsp; <a href="https://github.com/LidorPrototype/AutoScraper" target="_blank"
+                style="font-size: medium;
+                color: #90B8F8;
+                ">Click Here</a>
+                <br>
+                <br>
+            </p>
+            <!-- TextSummarization -->
+            <p>
+                <h2>Text Summarization</h2>
+                <img src="images/textsummarizations.jpg" alt="" style="width: 350px; height: 300px;"/>
+                <br>
+                In here you can find 5 different things that follows the Extractive and Abstractive text summarization approches.
+                <ol>
+                  <li>Extractive approach using nltk, networkx</li>
+                  <li>Extractive approach using nltk, heapq</li>
+                  <li>Extractive approach using spacy, pytextrank</li>
+                  <li>Extractive approach using transformers from Hugging Face</li>
+                  <li>Abstractive approach from scratch with Attention mechanism with coverage vector</li>
+                </ol>
+                To view the code &nbsp; <a href="https://github.com/LidorPrototype/TextSummarization" target="_blank"
+                style="font-size: medium;
+                color: #90B8F8;
+                ">Click Here</a>
+                <br>
+                To view extractive approaches medium article &nbsp; <a href="https://medium.com/@lidores98/text-summarization-part-1-extractive-abstractive-library-c840b281ee4" target="_blank"
+                style="font-size: medium;
+                color: #90B8F8;
+                ">Click Here</a>
+                <br>
+                To view abstractive approaches medium article &nbsp; <a href="https://medium.com/@lidores98/text-summarization-part-2-abstractive-9ee358fbbb11" target="_blank"
+                style="font-size: medium;
+                color: #90B8F8;
+                ">Click Here</a>
+                <br>
+                <br>
+            </p>
+            <!-- Chatbot & Virtual-Assistant -->
+            <p>
+                <h2>Chatbot & Virtual-Assistant</h2>
+                <img src="images/chatbot-va-black.png" alt="" style="width: 350px; height: 300px;"/>
+                <br>
+                Here you will find a collection of implementations of virtual assistants implemented in Python.<br>
+                Chatbots are intelligent enough to sense the context of the conversation and execute the right bot flow. However, chatbots cannot find answers or perform a set of activities on their own.
+                On the other hand, a virtual assistant can crawl through existing resources and offer assistance for a wide range of requests.
+                <br>
+                To view the code &nbsp; <a href="https://github.com/LidorPrototype/Chatbot-Virtual-Assistant" target="_blank"
+                style="font-size: medium;
+                color: #90B8F8;
+                ">Click Here</a>
+                <br>
+                <br>
+            </p>
+            <!-- Web Scrapers -->
+            <p>
+                <h2>Web Scrapers</h2>
+                <img src="images/web_scrapers.png" alt="" style="width: 350px; height: 300px;"/>
+                <br>
+                A list of few different web scrapers I created (For example: Gov.il, Amazon, Twitter, IMDb and more)<br>
+                Each scraper works in a different way, some need input or limits from the person operating the scripts.
+                Libraries I used for this including but not limited to are BeautifulSoup, Selenium, Scrapy, csv, requests, re and more.
+                <br>
+                To view the code &nbsp; <a href="https://github.com/LidorPrototype/Web-Scrapers" target="_blank"
+                style="font-size: medium;
+                color: #90B8F8;
+                ">Click Here</a>
+	    	<br>
+                To view the Selenium code &nbsp; <a href="https://github.com/LidorPrototype/Web-Scrapers/tree/main/Selenium%20Scraper" target="_blank"
+                style="font-size: medium;
+                color: #90B8F8;
+                ">Click Here</a>
+                <br>
+                <br>
+            </p>
+        </article>
+        <!-- Java -->
+        <article id="Java">
+        <h2 class="major">Java</h2>
+        <span class="image main"><img src="images/java.jpg" alt="" /></span>
+        <!-- Chess Engine -->
+        <p>
+            <h2>Chess Engine</h2>
+            <img src="images/chess.jpeg" alt="" style="width: 350px; height: 300px;"/>
+            <br>
+            This is an implantation to the famous Chess game, it's you vs the computer.<br>
+            This implantation is a graphical chess engine that also uses pruning in order to increase speed and perforamnces
+            Chess is a recreational and competitive board game played between two players, in this project it will be the user versus the computer.
+            <br>
+            To view the code &nbsp; <a href="https://github.com/LidorPrototype/ChessGameIssue1" target="_blank"
+            style="font-size: medium;
+            color: #90B8F8;
+            ">Click Here</a>
+            <br>
+            <br>
+        </p>
+	<hr>
+	<blockquote>For mobile java projects kindly refer to the mobile or the games (mixed) sections :)</blockquote>
+        </article>
+        <!-- C & CPP -->
+        <article id="CPP">
+            <h2 class="major">C & CPP</h2>
+            <span class="image main"><img src="images/c&cpp.jpg" alt="" /></span>
+            <!-- Generic Hash Table -->
+            <p>
+                <h2>Generic Hash Table</h2>
+                <img src="images/GenericHashTable.png" alt="" style="width: 300px; height: 300px; background-color: white;" />
+                <br>
+                HashTables are data structures that support these three operations:<br>
+                1. Adding an element<br>
+                2. Removing an element<br>
+                3. Searching for an element .<br>
+                The HashTable implemented by using an
+                array that at each index of the array, there is a pointer to a linked list.
+                The HashTable is support int and strings.
+                <br>
+                To view the code &nbsp; <a href="https://github.com/LidorPrototype/GenericHashtable" target="_blank"
+                style="font-size: medium;
+                color: #90B8F8;
+                ">Click Here</a>
+                <br>
+                <br>
+            </p>
+            <!-- HTTP Client -->
+            <p>
+                <h2>HTTP Client</h2>
+                <img src="images/http-client-transparent.png" alt="" style="width: 300px; height: 300px; " />
+                <br>
+                An HTTP client that constructs an HTTP request based on user’s command line input, sends the request
+                to a Web server, receives the reply from the server, and displays the reply message on screen.
+                (support only IPv4 connections).<br>
+                For Example: <br>
+                ./client -p some-text -r 2 tel=02-6655443 age=23 http://www.ptsv2.com/t/ex2<br>
+                The Request would be:<br>
+                POST /t/ex2?tel=02-6655443&age=23 HTTP/1.0<br>
+                Host: www.ptsv2.com<br>
+                Content-length:6
+                <br>
+                <br>
+                some-text 
+                <br>
+                To view the code &nbsp; <a href="https://github.com/LidorPrototype/HTTP/tree/master/HTTP-Client" target="_blank"
+                style="font-size: medium;
+                color: #90B8F8;
+                ">Click Here</a>
+                <br>
+                <br>
+            </p>
+            <!-- HTTP Server & Thread-pool -->
+            <p>
+                <h2>HTTP Server & Thread-pool</h2>
+                <img src="images/http-server.jpg" alt="" style="width: 300px; height: 300px; " />
+                <br>
+                HTTP server that:<br>
+                - Constructs an HTTP response based on client's request.<br>
+                - Sends the response to the client.<br>
+                The server creates the pool of threads in advanced and each time it needs a thread to
+                handle a client connection, it take one from the pool or enqueue the request if there is no
+                available thread in the pool. <br>
+                There is always one socket where the server listens to connections and for each client connection request,
+                the server opens another socket. and let a thread handle it.
+                <br>
+                To view the code &nbsp; <a href="https://github.com/LidorPrototype/HTTP/tree/master/HTTP-Server" target="_blank"
+                style="font-size: medium;
+                color: #90B8F8;
+                ">Click Here</a>
+                <br>
+                <br>
+            </p>
+        </article>
+        <!-- OS -->
+        <article id="OS">
+            <h2 class="major">Operating System</h2>
+            <span class="image main"
+            ><img src="images/Operating System.jpg" alt=""
+            /></span>
+            <!-- Disk Memory Management -->
+            <p>
+                <h2>Disk Memory Management</h2>
+                <img src="images/inode1.GIF" alt="" style="width: 350px; height: 300px;"/>
+                <br>
+                Its a simulation of disk memory Management , how the disk create files open them
+                reads form them, delete and write.
+                for each file we have inode (a structure) that points to blocks on disk and 
+                there will be the file data.
+                <br>
+                To view the code &nbsp; <a href="https://github.com/LidorPrototype/Disk-Memory-Managment" target="_blank"
+                style="font-size: medium;
+                color: #90B8F8;
+                ">Click Here</a>
+                <br>
+                <br>
+            </p>
+        </article>
+        <!-- Web -->
+        <article id="web">
+            <h2 class="major">Web Development</h2>
+            <span class="image main"
+            ><img src="images/web-development.png" alt=""
+            /></span>
+            <!-- L-ES Portfolio (Old Version) -->
+            <p>
+                <h2>L-ES Portfolio (Old Version)</h2>
+                <img src="images/L-ES.png" alt="" style="width: 350px; height: 250px;"/>
+                <br>
+                This one page website is an online portfolio of Lidor E.S (Me), it's implemented using HTML, CSS and JavaScript (with and without JQuery).
+                You can find my skills and projects, you can also read about me in order to get to know me better, read and look at all the online courses I completed.
+                And at the bottom there are many ways for you to get in touch me with.
+                <br>
+                To view the code &nbsp; <a href="https://github.com/LidorPrototype/LidorPrototype.github.io/tree/main/Old%20Versions/Online%20Portfolio%201" target="_blank"
+                style="font-size: medium;
+                color: #90B8F8;
+                ">Click Here</a>
+                <br>
+            </p>
+        </article>
+        <!-- Mobile -->
+        <article id="mobile_apps">
+            <h2 class="major">Mobile Development</h2>
+            <span class="image main"
+            ><img src="images/mobile2.png" alt=""
+            /></span>
+            <h1 style="color: dodgerblue;"><u><i>Java </i></u> </h1>
+            <!-- PasswordKit -->
+            <p>
+                <h2>PasswordKit</h2>
+                <img src="images/passwordkit.png" alt="" style="width: 350px; height: 300px;"/>
+                <br>
+                It's a mobile application for android using Java, this app is a password manager.<br>
+                You can store your passwords and usernames, generate new passwords and back it all up to your google drive account.
+                It encrypts your data using my own algrithm and on the result of my algorithm it uses Sha-1 and/or Sha-256, everything is then stored on your smartphone locally using SharedPreferences and Sqlite database
+                <br>
+                To view the code &nbsp; <a href="" target="_blank"
+                style="font-size: medium;
+                color: #90B8F8;
+                ">Click Here</a> not yet
+                <br>
+                To view on GooglePlay &nbsp; <a href="https://play.google.com/store/apps/details?id=com.LnY.passwordkit" target="_blank"
+                style="font-size: medium;
+                color: #90B8F8;
+                ">Click Here</a>
+                <br>
+                <br>          
+            </p>
+            <!-- Stickr -->
+            <p>
+                <h2>Stickr</h2>
+                <img src="images/Stickr.png" alt="" style="width: 350px; height: 300px;"/>
+                <br>
+                This is a sticker application in Java for whatsapp, sticker designer is Kiril G. <br>
+                It comes with only stickers in the hebrew language for now, it contain some ads and it allows you to add those stickers to your whatsapp freely, only for the featured pack you need to watch a short ad.
+                It's connected to Firebase and gets from it the statistics (release date, likes, downloads) as well as which pack is the featured one and also the most updated app version which allow the user to know when there is an update and whether the update is a must or not base on a FireBase fields.
+                <br>
+                To view the code &nbsp; <a href="https://github.com/LidorPrototype/Stickr" target="_blank"
+                style="font-size: medium;
+                color: #90B8F8;
+                ">Click Here</a>
+                <br>
+                To view on GooglePlay &nbsp; <a href="https://play.google.com/store/apps/details?id=com.l_es.kiril_stickers" target="_blank"
+                style="font-size: medium;
+                color: #90B8F8;
+                ">Click Here</a>
+                <br>
+                <br>          
+            </p>
+            <!-- CommunityRecipes -->
+            <p>
+                <h2>Community Recipes</h2>
+                <img src="images/CommunityRecipes.png" alt="" style="width: 350px; height: 300px;"/>
+                <br>
+                This application is in java and uses Services, Broadcast-Reciever, FireBase, SharedPreferences, Notifications, Camera and more.<br>
+                A place where everyone can see, share, like recipes of al the kinds of food they like, 
+                the more people in it the more recipes it will get and the more it will grow :)
+                <br>
+                To view the code &nbsp; <a href="https://github.com/LidorPrototype/CommunityRecipes" target="_blank"
+                style="font-size: medium;
+                color: #90B8F8;
+                ">Click Here</a>
+                <br>
+                <br>          
+            </p>
+            <!-- MusicianFinder -->
+            <p>
+                <h2>Musician Finder </h2>
+                <img src="images/MusicianFinder.png" alt="" style="width: 300px; height: 300px;"/>
+                <br>
+                This app will help musicians find other musicians or bands to play music with.
+                Users can chat with other people, upload posts and connect with other people in their area.
+                We did extensive use with FireBase (authentication, real-time database).
+                It was created with friends, as a team.
+                <br>
+                To view the code &nbsp; <a href="https://github.com/LidorPrototype/MusicianFinder" target="_blank"
+                style="font-size: medium;
+                color: #90B8F8;
+                ">Click Here</a>
+                <br>
+                <br>
+            </p>
+            <h1 style="color: dodgerblue;"><u><i>Flutter </i></u> </h1>
+            <!-- Sol Abs -->
+            <p>
+                <h2>Sol Abs</h2>
+                <img src="images/sol_abs_logo.jpeg" alt="" style="width: 300px; height: 300px;"/>
+                <br>
+                Sol Abs is an workout-fitness application both for Android and iOS developed for personal trainers as their request for their trainees.
+                <br>
+                this application have 2 types of users a free user and a signed one, both users can create and play workouts (the signed user will have ads), 
+                a signed users will have menus assigned to them from a proffesional trainer (which this application was made for) and will also have an account screen showing thier progress and measurements.
+                <br>
+                The code is not open yet.
+                <!-- To view the code &nbsp; <a href="https://github.com/yanngan/YANA" target="_blank"
+                style="font-size: medium;
+                color: #90B8F8;
+                ">Click Here</a> -->
+                <br>
+                <br>
+            </p>
+            <!-- Yana -->
+            <p>
+                <h2>Yana</h2>
+                <img src="images/yana-.jpg" alt="" style="width: 300px; height: 300px;"/>
+                <br>
+                YANA is a social initiative intended to fight against loneliness amongst young adults
+                This project is meant to help people create new social circles within safe spaces.
+                I built the App with my friends, to learn more about the app go to our Wiki.
+                <br>
+                To view our Wiki &nbsp; <a href="https://github.com/yanngan/YANA/wiki" target="_blank"
+                style="font-size: medium;
+                color: #90B8F8;
+                ">Click Here</a>
+                <br>
+                To view the code &nbsp; <a href="https://github.com/yanngan/YANA" target="_blank"
+                style="font-size: medium;
+                color: #90B8F8;
+                ">Click Here</a>
+                <br>
+                <br>
+            </p>
+            <!-- AllCalculator -->
+            <p>
+                <h2>AllCalculator</h2>
+                <img src="images/AllCalculator.png" alt="" style="width: 350px; height: 300px;"/>
+                <br>
+                This is a calculator with 3 options,
+                You can calculate anything you want using the limited scientific calculator, you can also calculate a tip and bill using the tip calculator option, and the third option is a currency converted which is limited to our donators only, you can donate 3/5/10 NIS any time you want and get the currency converter permanently.
+                <br>
+                To view the code &nbsp; <a href="https://github.com/LidorPrototype/All-Calculator" target="_blank"
+                style="font-size: medium;
+                color: #90B8F8;
+                ">Click Here</a>
+                <br>
+                To view on GooglePlay &nbsp; <a href="https://play.google.com/store/apps/details?id=com.lidorfirstflutter.tip_calculator_flutter" target="_blank"
+                style="font-size: medium;
+                color: #90B8F8;
+                ">Click Here</a>
+                <br>
+                <br>          
+            </p>
+        </article>
+        <!-- Games -->
+        <article id="games">
+            <h2 class="major">Games - mixed languages</h2>
+            <h3>Java, Python, JavaScript, C#, CPP</h3>
+            <span class="image main"
+            ><img src="images/games.jpg" alt=""
+            /></span>
+            <!-- Snake Games -->
+            <p>
+                <h2>Snake Games</h2>
+                <img src="images/snake-game.png" alt="" style="width: 350px; height: 250px;"/>
+                <br>
+                This is a collection of the famous Snake game, it comes in Java, Python and JavaScript.
+                Snake is a video game that originated during the late 1970s in arcades becoming something of a classic.
+                The player controls a long, thin creature, resembling a snake, which roams around on a bordered plane, picking up food, trying to avoid hitting its own tail or the edges of the playing area.
+                <br>
+                To view the code &nbsp; <a href="https://github.com/LidorPrototype/SnakeGamesCollection" target="_blank"
+                style="font-size: medium;
+                color: #90B8F8;
+                ">Click Here</a>
+                <br>
+            </p>
+            <!-- CUBETHON -->
+            <p>
+                <h2>CUBETHON</h2>
+                <img src="images/Cubethon-transparent.png" alt="" style="width: 350px; height: 250px;"/>
+                <br>
+                This is a simple game in C# of a red block that trying to avoid collision with other obstacles.<br>
+                The game is devided into level, each level contains more and more obstacles, the player speed is increasing, different surface frictions and more.
+                This game is suitable for Desktop and Mobile.
+                <br>
+                To view the code &nbsp; <a href="https://github.com/LidorPrototype/CUBETHON" target="_blank"
+                style="font-size: medium;
+                color: #90B8F8;
+                ">Click Here</a>
+                <br>
+            </p>
+            <!-- Tower Defense -->
+            <p>
+                <h2>Tower Defense</h2>
+                <img src="images/TowerDefense.png" alt="" style="width: 350px; height: 250px;"/>
+                <br>
+                This is a Tower Defense implementation in Unity using C#.<br>
+                Tower defense (TD) is a subgenre of strategy video game where the goal is to defend a player's territories or possessions by obstructing the enemy attackers or by stopping enemies from reaching the exits, usually achieved by placing defensive structures on or along their path of attack.
+                <br>
+                To view the code &nbsp; <a href="https://github.com/LidorPrototype/TowerDefense_Issue-1" target="_blank"
+                style="font-size: medium;
+                color: #90B8F8;
+                ">Click Here</a>
+                <br>
+            </p>
+            <!-- TicTacToesCollection -->
+            <p>
+                <h2>TicTacToes Collection</h2>
+                <img src="images/Tic_tac_toe.png" alt="" style="width: 350px; height: 250px;"/>
+                <br>
+                This is the famous game Tic Tac Toe / noughts and crosses. There are Xs and Os, the players take turns marking the spaces in a 3×3 grid. The first player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner. You can play against the computer or against your friend. The computer looks for the quickest way to win in the least moves.
+                The game available in Java, JavaScript, CPP, C#, Python.
+                <br>
+                To view the code &nbsp; <a href="https://github.com/LidorPrototype/TicTacToesCollection" target="_blank"
+                style="font-size: medium;
+                color: #90B8F8;
+                ">Click Here</a>
+                <br>
+            </p>
+            <!-- FallingBlocks -->
+            <p>
+                <h2>FallingBlocks</h2>
+                <img src="images/falling-blocks.png" alt="" style="width: 350px; height: 250px;"/>
+                <br>
+                This is a Falling Blocks implementation in Unity using C#.<br>
+                Falling Blocks is a game where you ( the player ) need to move from side to side in order to avoid collision with the blocks that are falling from the top of the screen ( and top of the sides ), the blocks are coming in random direstions, shapes and sizes and the more you progress in the game the faster the blocks will fall.
+                <br>
+                To view the code &nbsp; <a href="https://github.com/LidorPrototype/FallingBlocks" target="_blank"
+                style="font-size: medium;
+                color: #90B8F8;
+                ">Click Here</a>
+                <br>
+            </p>
+        </article>
+      </div>
+      <!-- Footer -->
+      <footer id="footer">
+        <h2>
+            <!-- GooglePlay -->
+            <a href="https://play.google.com/store/apps/dev?id=6589420104492859272&hl=en&gl=US" class="icon brands fa-google-play" 
+            ><span class="label">GooglePlay</span></a>
+            <!-- Github -->
+            <a href="https://github.com/LidorPrototype" class="icon brands fa-github" 
+            ><span class="label">Github</span></a>
+            <!-- Stackoverflow -->
+            <a href="https://stackoverflow.com/users/8405296/lidor-eliyahu-shelef" class="icon brands fa-stack-overflow" 
+            ><span class="label">stackoverflow</span></a>
+            <!-- Medium -->
+            <a href="https://medium.com/@lidores98" class="icon brands fa-medium" 
+            ><span class="label">medium</span></a>
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/lidor-e-s/" class="icon brands fa-linkedin"
+            ><span class="label">LinkedIn</span></a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/lidoreliyahu/" class="icon brands fa-instagram"
+            ><span class="label">Instagram</span></a>
+            <!-- Facebook -->
+            <a href="https://en-gb.facebook.com/ivanlidor" class="icon brands fa-facebook"
+            ><span class="label">Facebook</span></a>
+        </h2>
+		Contact me at <a href="mailto:ivanlidor98@gmail.com" style="font-size: medium;
+		color: rgb(115, 115, 228);">ivanlidor98@gmail.com </a>
+		<p class="copyright">
+          All rights reserved to Lidor Eliyahu Shelef (L-ES)
+          <span style="font-size: medium">&copy;</span>
+        </p>
+      </footer>
+    </div>
+    <!-- Background -->
+    <div id="bg"></div>
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

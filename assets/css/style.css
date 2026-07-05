@@ -1,0 +1,767 @@
+/* =========================================================
+   L-ES Portfolio — data-driven, dependency-free
+   Full-viewport backdrop with fade-in "page" panels.
+   ========================================================= */
+
+:root {
+  --bg: #1b1f22;
+  --panel: rgba(27, 31, 34, 0.9);
+  --line: rgba(255, 255, 255, 0.15);
+  --line-soft: rgba(255, 255, 255, 0.08);
+  --wire: rgba(255, 255, 255, 0.35);
+  --frame: rgba(255, 255, 255, 0.4);
+  --text: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.65);
+  --accent: #90b8f8;
+  --accent-soft: rgba(144, 184, 248, 0.12);
+  --chip-bg: rgba(255, 255, 255, 0.08);
+  --radius: 8px;
+  --speed: 0.3s;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(144, 184, 248, 0.4);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+a:hover {
+  color: #cfe0ff;
+  border-bottom-color: transparent;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  z-index: 100;
+  background: var(--accent);
+  color: #10151a;
+  padding: 0.6rem 1rem;
+  border-radius: 0 0 8px 0;
+  font-weight: 600;
+  border: 0;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+/* ---------------- Backdrop ---------------- */
+#scene {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  transform: scale(1);
+}
+#scene::before,
+#scene::after {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+/* tint + repeating texture layer */
+#scene::before {
+  z-index: 2;
+  background-image: linear-gradient(
+      to top,
+      rgba(19, 21, 25, 0.5),
+      rgba(19, 21, 25, 0.5)
+    ),
+    url("../../images/overlay.png");
+  background-size: auto, 256px 256px;
+  background-repeat: no-repeat, repeat;
+  transition: background-color 2.4s ease-in-out 0.7s;
+}
+/* the photo itself; --shot-front / --shot-panels injected by JS */
+#scene::after {
+  z-index: 1;
+  background-image: var(--shot-front, url("../../images/bg.jpg"));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1.14);
+  transition: transform var(--speed) var(--ease), filter var(--speed) var(--ease);
+}
+body.panel-open #scene::after {
+  background-image: var(--shot-panels, var(--shot-front, url("../../images/bg.jpg")));
+  transform: scale(1.09);
+  filter: blur(0.22rem);
+}
+body.booting #scene::before {
+  background-color: var(--bg);
+}
+
+/* Cursor trail (front-page only) — above backdrop, below content, click-through */
+#trail {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+body.panel-open #trail {
+  opacity: 0;
+}
+
+/* ---------------- Stage ---------------- */
+#stage {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+/* ---------------- Intro ---------------- */
+#intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  max-width: 100%;
+  transition: transform var(--speed) var(--ease), filter var(--speed) var(--ease),
+    opacity var(--speed) var(--ease);
+}
+body.panel-open #intro {
+  transform: scale(0.94);
+  filter: blur(0.12rem);
+  opacity: 0;
+  pointer-events: none;
+}
+body.booting #intro {
+  filter: blur(0.14rem);
+}
+
+#intro h1 {
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.4rem;
+}
+/* Per-letter hero title; each glyph springs on hover */
+#intro h1 .glyph {
+  display: inline-block;
+  transition: color 0.2s ease;
+  will-change: transform;
+}
+#intro h1 .glyph:hover {
+  color: var(--accent);
+}
+#intro h1 .glyph.springing {
+  animation: squish 1s;
+}
+#intro h1 .gap {
+  display: inline-block;
+  width: 0.25em;
+}
+@keyframes squish {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #intro h1 .glyph.springing {
+    animation: none;
+  }
+}
+#intro .role {
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  margin: 0;
+}
+body.booting #intro .cta-row {
+  opacity: 0;
+}
+
+/* Framed name/role block; horizontal rules sized to the name + padding, then a
+   thin vertical wire drops through Featured down to the menu tabs. */
+.identity {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  border-top: 1px solid var(--frame);
+  border-bottom: 1px solid var(--frame);
+}
+
+.cta-row {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.25rem;
+  transition: opacity 0.5s ease;
+}
+/* Nothing to show -> collapse so the wire runs straight to the menu */
+.cta-row:empty {
+  display: none;
+  margin: 0;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  cursor: pointer;
+}
+.btn:hover {
+  color: var(--text);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.btn svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+}
+
+/* Featured entry — a "start here" node sitting on the vertical wire */
+.featured-cta {
+  position: relative;
+  margin-top: 2.2rem;
+}
+.featured-cta::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -2.2rem;
+  width: 1px;
+  height: 2.2rem;
+  background: var(--wire);
+  transform: translateX(-50%);
+}
+/* Menu-tab shape, but bordered in the accent so it still leads the eye */
+.btn-featured {
+  height: 2.75rem;
+  padding: 0 1.4rem;
+  border-radius: 4px;
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.btn-featured:hover {
+  background: rgba(144, 184, 248, 0.1);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.btn-featured svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+}
+body.booting .featured-cta {
+  opacity: 0;
+}
+/* Finite "hey, start here" pulse — runs a few times then settles */
+.btn-featured.pulse {
+  animation: beacon 1.4s ease-in-out 3;
+}
+@keyframes beacon {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(144, 184, 248, 0.5);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 12px rgba(144, 184, 248, 0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-featured.pulse {
+    animation: none;
+  }
+}
+
+/* ---------------- Menu ---------------- */
+#menu {
+  position: relative;
+  margin-top: 2.2rem;
+}
+#menu::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -2.2rem;
+  width: 1px;
+  height: 2.2rem;
+  background: var(--wire);
+  transform: translateX(-50%);
+}
+#menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+#menu li {
+  border-left: 1px solid var(--line);
+}
+#menu li:first-child {
+  border-left: 0;
+}
+#menu a {
+  display: block;
+  min-width: 6.5rem;
+  height: 2.75rem;
+  line-height: 2.75rem;
+  padding: 0 1.25rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text);
+  border-bottom: 0;
+}
+#menu a:hover {
+  color: var(--accent);
+}
+
+/* ---------------- Panels ("pages") ---------------- */
+#panels {
+  display: none;
+}
+/* When open, overlay the viewport so the (blurred) intro/outro don't reserve
+   layout space and shove the panel down. */
+#panels.open {
+  display: flex;
+  position: fixed;
+  inset: 0;
+  z-index: 4;
+  align-items: flex-start;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 2.5rem 1.5rem;
+}
+
+.panel {
+  display: none;
+  position: relative;
+  width: 46rem;
+  max-width: 100%;
+  margin: 1rem auto;
+  padding: 4.5rem 2.5rem 2rem;
+  background: var(--panel);
+  border-radius: var(--radius);
+  text-align: left;
+  transform: translateY(0.25rem);
+  opacity: 0;
+  transition: opacity var(--speed) var(--ease), transform var(--speed) var(--ease);
+}
+.panel.mounted {
+  display: block;
+}
+.panel.shown {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.panel-title {
+  font-size: 1.9rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.35rem;
+}
+.panel-sub {
+  color: var(--text-muted);
+  margin: 0 0 1.75rem;
+  font-size: 0.95rem;
+}
+
+/* Close button */
+.panel .close {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4rem;
+  height: 4rem;
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  text-indent: 4rem;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.panel .close::before {
+  content: "";
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20px' height='20px' viewBox='0 0 20 20'%3E%3Cstyle%3Eline %7B stroke: %23ffffff; stroke-width: 1; %7D%3C/style%3E%3Cline x1='2' y1='2' x2='18' y2='18' /%3E%3Cline x1='18' y1='2' x2='2' y2='18' /%3E%3C/svg%3E");
+  transition: background-color 0.2s ease-in-out;
+}
+.panel .close:hover::before {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ---------------- Search / tag filter (Explore panel) ---------------- */
+.search-input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1rem;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+.search-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.tag-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+.tag-chip {
+  font: inherit;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--line);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.tag-chip:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+.tag-chip.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #10151a;
+  font-weight: 600;
+}
+
+/* ---------------- Cards ---------------- */
+.cards {
+  display: grid;
+  gap: 1.25rem;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 1.1rem 1.2rem 1.25rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+}
+.card-media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #10151a;
+}
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card-badges {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+.badge {
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.18rem 0.5rem;
+  border-radius: 5px;
+  background: rgba(16, 21, 26, 0.85);
+  color: var(--text);
+}
+.badge.shipped {
+  background: rgba(76, 175, 122, 0.92);
+  color: #06110b;
+}
+.badge.featured {
+  background: var(--accent);
+  color: #10151a;
+}
+.badge.team {
+  background: rgba(224, 168, 96, 0.92);
+  color: #1c1206;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+.card-cat {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+.card-desc {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+.card-role {
+  margin: 0;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--text-muted);
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+.chip {
+  font-size: 0.72rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 5px;
+  background: var(--chip-bg);
+  color: var(--text-muted);
+}
+.card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  padding-top: 0.2rem;
+}
+.card-link {
+  font-size: 0.86rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  border-bottom: 0;
+}
+.card-link svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+}
+
+/* Version timeline */
+.versions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  border-left: 2px solid var(--line);
+  padding-left: 0.9rem;
+}
+.version {
+  font-size: 0.85rem;
+}
+.version-label {
+  font-weight: 700;
+}
+.version-note {
+  color: var(--text-muted);
+}
+.version-links {
+  display: inline-flex;
+  gap: 0.7rem;
+  margin-left: 0.3rem;
+}
+
+/* ---------------- Outro ---------------- */
+#outro {
+  width: 100%;
+  transition: transform var(--speed) var(--ease), filter var(--speed) var(--ease),
+    opacity var(--speed) var(--ease);
+}
+body.panel-open #outro {
+  transform: scale(0.94);
+  filter: blur(0.12rem);
+  opacity: 0;
+  pointer-events: none;
+}
+body.booting #outro {
+  opacity: 0;
+}
+.socials {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.social {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.04);
+}
+.social:hover {
+  color: #10151a;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.social svg {
+  width: 19px;
+  height: 19px;
+  fill: currentColor;
+}
+.contact,
+.copyright {
+  margin: 0.2rem 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ---------------- States ---------------- */
+.empty-state {
+  color: var(--text-muted);
+  text-align: center;
+  padding: 2rem 0;
+}
+.noscript-msg {
+  position: relative;
+  z-index: 3;
+  max-width: 40rem;
+  margin: 1.5rem auto;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+
+/* Two-column cards on wider panels */
+@media screen and (min-width: 640px) {
+  .cards.multi {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cards.multi .card.wide {
+    grid-column: 1 / -1;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #menu ul {
+    flex-direction: column;
+    min-width: 12rem;
+  }
+  #menu li {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+  #menu li:first-child {
+    border-top: 0;
+  }
+  #menu a {
+    width: 100%;
+  }
+  .panel {
+    padding: 3.5rem 1.5rem 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  #scene::after,
+  .panel {
+    transition: none !important;
+  }
+}
